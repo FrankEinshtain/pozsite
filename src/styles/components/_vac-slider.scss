@@ -1,0 +1,196 @@
+.vac-slider {
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+
+  .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - 50px);
+    background: rgba(235, 240, 243, 0.5);
+    width: 109px;
+    height: 109px;
+    border: none;
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    &-next::after,
+    &-prev::before {
+      content: '';
+      display: block;
+      position: relative;
+      width: 18px;
+      height: 18px;
+      border-right: 3px solid $color-blue-gray-2;
+      border-bottom: 3px solid $color-blue-gray-2;
+    }
+
+    &-next {
+      right: -50px;
+
+      &::after {
+        transform: rotate(-45deg);
+        left: 20px;
+      }
+    }
+
+    &-prev {
+      left: -50px;
+
+      &::before {
+        transform: rotate(135deg);
+        right: 20px;
+      }
+    }
+  }
+
+  .slick {
+    &-list {
+      z-index: 10;
+    }
+
+    &-dots {
+      width: 100%;
+      display: flex !important;
+      flex-direction: row;
+      justify-content: center;
+      align-self: center;
+      margin-top: 10px;
+
+      li {
+        &:not(:last-child) {
+          margin: 0 15px 0 0;
+        }
+
+        button {
+          color: transparent;
+          background: $color-blue-gray-2;
+          width: 10px;
+          height: 10px;
+          margin: 0;
+          padding: 0;
+          border-radius: 50%;
+          border: none;
+        }
+      }
+
+      li.slick-active {
+        button {
+          background: $color-blue;
+        }
+      }
+    }
+
+    &-slide {
+      .item {
+        z-index: 555;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: $color-white;
+        box-shadow: 0 0 8px rgba(114, 153, 181, 0.2);
+        border-radius: 5px;
+        padding: 20px 30px;
+
+        &-header {
+          width: 100%;
+          height: fit-content;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
+          h4 {
+            margin: 0;
+          }
+        }
+
+        &-bullit {
+          font-weight: $font-bold;
+          width: fit-content;
+          color: $color-green;
+          background: $color-gray;
+          border-radius: 5px;
+          text-transform: uppercase;
+          padding: 3px 8px;
+          align-self: flex-end;
+        }
+
+        &-content {
+          margin-bottom: 30px;
+
+          p {
+            color: $color-blue-light;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include sm {
+  .vac-slider {
+    max-width: 100%;
+
+    .arrow {
+      top: calc(100% - 35px);
+      width: 50px;
+      height: 50px;
+
+      &-next::after,
+      &-prev::before {
+        width: 10px;
+        height: 10px;
+      }
+
+      &-next {
+        right: 10px;
+
+        &::after {
+          left: 0;
+          right: -20px;
+        }
+      }
+
+      &-prev {
+        left: 10px;
+
+        &::before {
+          left: 0;
+          right: -20px;
+        }
+      }
+    }
+
+    .slick {
+      &-dots {
+        margin-top: 50px;
+      }
+
+      &-slide {
+        .item {
+          z-index: 555;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: $color-white;
+          box-shadow: 0 0 8px rgba(114, 153, 181, 0.2);
+          border-radius: 5px;
+          padding: 20px 30px;
+
+          &-header {
+            h4 {
+              font-size: 20px;
+            }
+          }
+
+          &-bullit {
+            margin: 5px 0;
+          }
+        }
+      }
+    }
+  }
+}

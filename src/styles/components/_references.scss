@@ -1,0 +1,10 @@
+.references {
+  background: $color-white;
+  background-image: url('../img/backTexture.png');
+  background-position: top;
+  background-repeat: repeat;
+
+  &-button {
+    margin: 30px auto;
+  }
+}

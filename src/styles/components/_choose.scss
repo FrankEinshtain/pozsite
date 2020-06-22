@@ -1,0 +1,21 @@
+.choose {
+  background: $color-white;
+
+  h5 {
+    margin: 0 11%;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-button {
+    width: fit-content;
+    margin: 60px auto 0;
+    background: $color-green;
+    padding: 10px 20px;
+  }
+}

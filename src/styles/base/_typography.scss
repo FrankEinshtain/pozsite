@@ -1,0 +1,94 @@
+.bold {
+  font-weight: $font-bold !important;
+}
+
+.green {
+  color: $color-green;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include bold-title;
+}
+
+h1 {
+  color: $color-gray;
+  font-size: 72px;
+  margin: 0 0 30px;
+}
+
+h2 {
+  font-size: 48px;
+  color: $color-gray-light;
+  margin: 0;
+}
+
+h3 {
+  position: relative;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $color-blue-dark;
+  margin: 0 0 70px;
+  vertical-align: middle;
+
+  &::before {
+    vertical-align: inherit;
+    position: absolute;
+    left: -170px;
+    width: 150px;
+    height: 20px;
+    content: url('../img/title-bullet.png');
+  }
+}
+
+h4 {
+  font-size: 24px;
+  color: $color-blue-darkest;
+}
+
+h5 {
+  font-weight: $font-regular;
+  font-size: 20px;
+  line-height: 33px;
+  text-align: center;
+  color: $color-blue-light;
+}
+
+p {
+  font-family: $font-text;
+  font-style: normal;
+  font-weight: $font-regular;
+  font-size: 18px;
+  line-height: 28px;
+  color: $color-white;
+}
+
+@include xl {
+  h3 {
+    margin: 0 0 70px 120px;
+  }
+}
+
+@include sm {
+  h1 {
+    font-size: 45px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin: 0 0 70px 80px;
+
+    &::before {
+      bottom: 12px;
+    }
+  }
+}

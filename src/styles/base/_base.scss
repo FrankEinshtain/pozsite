@@ -1,0 +1,53 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #e5e5e5;
+  box-sizing: border-box;
+
+  @include bold-title;
+}
+
+section {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include sm {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.inner {
+  max-width: 1110px;
+  margin: 0 auto;
+
+  @include sm {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.button {
+  display: block;
+  width: max-content;
+  background: #4dc6e4;
+  border: 1px solid rgba(159, 219, 234, 0.29);
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: $color-white;
+  font-family: $font-text;
+  font-style: normal;
+  font-weight: $font-bold;
+  font-size: 18px;
+  padding: 10px 30px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}

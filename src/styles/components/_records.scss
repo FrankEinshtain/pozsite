@@ -1,0 +1,65 @@
+.records {
+  background: $color-blue-gray;
+  padding: 0;
+
+  &-list {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+
+    @include md {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    padding: 30px;
+
+    &:not(:last-child) {
+      border-right: 2px solid rgba(255, 255, 255, 0.42);
+    }
+
+    &:not(:first-child) {
+      border-left: 2px solid #d0dde7;
+    }
+
+    &-count {
+      @include bold-title;
+
+      font-size: 50px;
+      line-height: 100%;
+      color: $color-blue-light;
+      text-shadow: 0 0 3px #fff;
+    }
+
+    &-description {
+      @include bold-title;
+
+      font-size: 18px;
+      color: $color-blue-dark;
+      text-align: center;
+    }
+
+    @include md {
+      width: 350px;
+      max-width: 100%;
+
+      &:not(:last-child) {
+        border-right: transparent;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.42);
+      }
+
+      &:not(:first-child) {
+        border-right: transparent;
+        border-top: 2px solid #d0dde7;
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.competences {
+  background: $color-white;
+
+  &-list {
+    max-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 20px;
+
+    @include lg {
+      justify-content: center;
+    }
+
+    @include sm {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &-item {
+    width: 30%;
+    margin-bottom: 30px;
+    height: min-content;
+    background: #ebf0f3;
+    border-radius: 5px;
+
+    @include lg {
+      max-width: 350px;
+      width: 100%;
+      margin: 15px;
+    }
+
+    @include xs {
+      margin: 10px 0;
+    }
+
+    .title {
+      @include bold-title;
+
+      width: fit-content;
+      word-wrap: break-word;
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin: 0;
+      color: $color-blue-darkest;
+
+      &::before {
+        content: url('../img/green-bullet.png');
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    .icons {
+      background: rgba(176, 196, 217, 0.37);
+      border-radius: 0 0 5px 5px;
+      padding: 5px 30px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 50px;
+
+      &-bullit {
+        width: 15px;
+        height: 15px;
+        align-self: flex-end;
+        position: relative;
+        bottom: 20px;
+        border-right: 3px solid $color-blue-dark;
+        border-bottom: 3px solid $color-blue-dark;
+        transform: rotate(45deg);
+      }
+
+      &-item {
+        margin: 0 5px;
+      }
+    }
+  }
+}

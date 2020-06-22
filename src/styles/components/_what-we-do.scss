@@ -1,0 +1,49 @@
+.what-we-do {
+  padding: 70px 0;
+  background: #f6f8fa;
+
+  &-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(114, 153, 181, 0.2);
+    border-radius: 5px;
+    width: min-content;
+    max-width: 300px;
+    height: 120px;
+    margin: 15px;
+    padding: 0 25px;
+    font-family: $font-global;
+    font-style: normal;
+    font-weight: $font-bold;
+    font-size: 22px;
+    color: $color-blue-light;
+  }
+
+  &-img {
+    margin-right: 20px;
+  }
+}
+
+@include xs {
+  .what-we-do {
+    &-item {
+      max-width: 50%;
+      width: 150px;
+      margin: 5px;
+      padding: 10px 5px;
+      flex-direction: column;
+      font-size: 18px;
+      justify-content: space-around;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "extends": "gatsby-standard",
+  "rules": {
+    "semi": "error",
+    "strict": "error"
+  }
+}
