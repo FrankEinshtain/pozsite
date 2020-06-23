@@ -1,3 +1,5 @@
+const path = require(`path`)
+
 module.exports = {
   siteMetadata: {
     title: `Pozitiff Site`,
@@ -7,10 +9,25 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        htmlTitle: `Pozitiff Site Content Manager`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/img`,
+        name: `img`,
+        path: path.join(__dirname, `src`, `img`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `md-pages`,
+        path: `${__dirname}/src/md-pages`,
       },
     },
     {

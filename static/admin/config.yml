@@ -1,0 +1,23 @@
+backend:
+  name: test-repo
+media_folder: static/img
+public_folder: /img
+collections:
+  - name: hero
+    label: Hero
+    folder: hero
+    create: true
+    fields:
+      - { name: background, label: Background, widget: image,  }
+      - { name: title, label: Title }
+      - { name: subtitle, label: Subtitle }
+
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
