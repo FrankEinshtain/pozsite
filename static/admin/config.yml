@@ -1,143 +1,27 @@
 backend:
   name: git-gateway
+  repo: FrankEinshtain/pozsite
   branch: master
 
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: site
-    label: site
+  - name: hero,
+    label: Hero,
     folder: src/components/
-    media_folder: static/img
-    public_folder: /img
     format: frontmatter
     fields:
-      - { name: title, label: Title, widget: string }
-      - {
-        name: hero,
-        label: Hero,
-        widget: object,
-        collapsed: false,
-        fields:
-          [
-            { label: Title, name: title, widget: string },
-            { label: Subtitle, name: subtitle, widget: string },
-            { label: Background, name: background, widget: image },
-            { label: 'Button URL',  name: buttonurl, widget: string },
-          ]
-        }
-      - {
-        name: whatwedo,
-        label: 'What We Do',
-        widget: 'list',
-        allow_add: true,
-        collapsed: false,
-        fields:
-          [
-            { name: title, label: Title, widget: string },
-            { name: icon, label: Icon, widget: image },
-          ]
-        }
-      - {
-        name: competences,
-        label: competences,
-        widget: 'list',
-        allow_add: true,
-        collapsed: false,
-        fields:
-          [
-            { name: title, label: Title, widget: string },
-            {
-              name: icon,
-              label: Icon,
-              widget: 'list',
-              allow_add: true,
-              collapsed: false,
-              fields:
-                [
-                  { name: icon, label: Icon, widget: image },
-                ]
-            }
-          ]
-        }
-      - {
-        name: references,
-        label: References,
-        widget: object,
-        fields:
-          [
-            { name: buttonurl, label: 'Button Url', widget: string },
-            {
-              name: referencelist,
-              label: 'Reference List',
-              widget: 'list',
-              allow_add: true,
-              collapsed: false,
-              fields:
-                [
-                  { name: name, label: name, widget: string },
-                  { name: position, label: position, widget: string },
-                  { name: photo, label: photo, widget: image },
-                ]
-            }
-          ]
-        }
-      - {
-        name: whychooseus,
-        label: 'Why Choose Us',
-        widget: object,
-        fields:
-          [
-            { name: text, label: text, widget: string },
-            { name: textbold, label: 'Text Bold', widget: string },
-            { name: buttonurl, label: 'Button URL', widget: string },
-          ]
-        }
-      - {
-        name: vacancies,
-        label: Vacancies,
-        widget: object,
-        fields:
-          [
-            { name: title, label: Title, widget: string },
-            {
-              name: requirements,
-              label: requirements,
-              widget: 'list',
-              allow_add: true,
-              collapsed: false,
-              fields:
-                [
-                  { name: requirement, label: requirement, widget: string },
-                ]
-            },
-            {
-              name: vacancy,
-              label: Vacancy,
-              widget: list,
-              allow_add: true,
-              collapsed: false,
-              fields:
-                [
-                  { name: icon, label: Icon, widget: image },
-                  { name: description, label: description, widget: string },
-                  { name: bullit, label: bullit, widget: string },
-                  {
-                    name: requirements,
-                    label: requirements,
-                    widget: 'list',
-                    allow_add: true,
-                    collapsed: false,
-                    fields:
-                      [
-                      { name: requirement, label: requirement, widget: string },
-                      ]
-                  }
-                ]
-              },
-          ]
-        }
-      - { name: map, label: Map, widget: image }
-      - { name: contactimage, label: 'ContactImage', widget: image }
-
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+      - { label: Background, name: background, widget: image }
+      - { label: 'Button URL',  name: buttonurl, widget: string }
+  - name: heronext,
+    label: Heronext,
+    folder: src/components/
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string }
+      - { label: Background, name: background, widget: image }
+      - { label: 'Button URL',  name: buttonurl, widget: string }
