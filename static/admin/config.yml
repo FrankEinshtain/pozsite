@@ -1,23 +1,113 @@
 backend:
-  name: test-repo
+  name: git-gateway
+  branch: master
+
 media_folder: static/img
 public_folder: /img
-collections:
-  - name: hero
-    label: Hero
-    folder: hero
-    create: true
-    fields:
-      - { name: background, label: Background, widget: image,  }
-      - { name: title, label: Title }
-      - { name: subtitle, label: Subtitle }
 
-  - name: blog
-    label: Blog
-    folder: blog
+collections:
+  - name: site
+    label: site
+    folder: src/components/
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - {name: title, label: Title, widget: string }
+      - {
+        name: hero
+        label: Hero
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: subtitle, label: Subtitle, widget: string }
+          - { name: background, label: Background, widget: image }
+          - { name: buttonurl, label: 'Button URL', widget: string }
+        }
+      - {
+        name: whatwedo
+        label: 'What We Do'
+        widget: 'list'
+        allow_add: true
+        collapsed: false
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: icon, label: Icon, widget: image }
+        }
+      - {
+        name: competences
+        label: competences
+        widget: 'list'
+        allow_add: true
+        collapsed: false
+        fields:
+          - { name: title, label: Title, widget: string }
+          - {
+            name: icon,
+            label: Icon,
+            widget: 'list'
+            allow_add: true
+            collapsed: false
+            fields:
+              - { name: icon, label: Icon, widget: image }
+            }
+        }
+      - {
+        name: references
+        label: References
+        fields:
+          - { name: buttonurl, label: 'Button Url', widget: string }
+          - {
+            name: referencelist
+            label: 'Reference List'
+            widget: 'list'
+            allow_add: true
+            collapsed: false
+            fields:
+              - { name: name, label: name, widget: string }
+              - { name: position, label: position, widget: string }
+              - { name: photo, label: photo, widget: image }
+            }
+        }
+      - {
+        name: whychooseus
+        label: 'Why Choose Us'
+        fields:
+          - { name: text, label: text, widget: string }
+          - { name: textbold, label: 'Text Bold', widget: string }
+          - { name: buttonurl, label: 'Button URL', widget: string }
+        }
+      - {
+        name: vacancies
+        label: Vacancies
+        fields:
+          - { name: title, label: Title, widget: string }
+          - {
+            name: requirements,
+            label: requirements,
+            widget: 'list'
+            allow_add: true
+            collapsed: false
+            fields:
+              - { name: requirement, label: requirement, widget: string }
+            }
+          - {
+            name: vacancy,
+            label: Vacancy,
+            widget: 'list'
+            allow_add: true
+            collapsed: false
+            fields:
+              - { name: icon, label: Icon, widget: image }
+              - { name: description, label: description, widget: string }
+              - { name: bullit, label: bullit, widget: string }
+              - {
+                name: requirements,
+                label: requirements,
+                widget: 'list'
+                allow_add: true
+                collapsed: false
+                fields:
+                  - { name: requirement, label: requirement, widget: string }
+                }
+            }
+          - { name: map, label: Map, widget: image }
+          - { name: contactimage, label: 'ContactImage', widget: image }
+        }

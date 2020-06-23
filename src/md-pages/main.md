@@ -1,8 +1,8 @@
 ---
-slug: "/src/layout/index"
-title: "Pozitiff TITLE"
+slug: '/src/layout/index'
+title: 'Pozitiff TITLE'
 
-first: "first"
-second: "second"
-subtitle: "Pozitiff SUBTITLE"
+first: 'first'
+second: 'second'
+subtitle: 'Pozitiff SUBTITLE'
 ---
