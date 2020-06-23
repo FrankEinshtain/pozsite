@@ -7,19 +7,21 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: hero,
-    label: Hero,
+  - name: hero
+    label: Hero
     folder: src/components/
     format: frontmatter
+    create: true
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
       - { label: Background, name: background, widget: image }
       - { label: 'Button URL',  name: buttonurl, widget: string }
-  - name: heronext,
-    label: Heronext,
+  - name: heronext
+    label: Heronext
     folder: src/components/
     format: frontmatter
+    create: true
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Subtitle, name: subtitle, widget: string }
