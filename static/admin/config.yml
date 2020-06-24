@@ -3,13 +3,14 @@ backend:
   repo: FrankEinshtain/pozsite
   branch: master
 
+
 media_folder: static/img
 public_folder: /img
 
 collections:
   - name: site
     label: Site
-    folder: src/markdown/
+    folder: src/markdown
     format: frontmatter
     create: true
     fields:

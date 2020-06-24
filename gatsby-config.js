@@ -11,9 +11,10 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     {
-      resolve: `gatsby-plugin-netlify-cms`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        htmlTitle: `Pozitiff Site Content Manager`,
+        path: `${__dirname}/src/markdown`,
+        name: 'markdown',
       },
     },
     {
@@ -24,10 +25,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-netlify-cms`,
       options: {
-        name: `markdown`,
-        path: path.join(__dirname, `src`, `markdown`),
+        htmlTitle: `Pozitiff Site Content Manager`,
       },
     },
     {
