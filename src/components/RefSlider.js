@@ -1,7 +1,7 @@
 import React from 'react'
 import RefSliderItem from './RefSliderItem'
 import Slider from 'react-slick'
-import sliderGirl from '../img/referece-girl.png'
+import sliderGirl from '../img/reference-girl.png'
 
 const slides = [
   {

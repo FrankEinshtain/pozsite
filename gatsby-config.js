@@ -25,6 +25,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `icons`,
+        path: path.join(__dirname, `src`, `img`, `icons`),
+      },
+    },
+    {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         htmlTitle: `Pozitiff Site Content Manager`,

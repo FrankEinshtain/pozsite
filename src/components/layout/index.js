@@ -44,3 +44,28 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+// allMarkdownRemark {
+//   edges {
+//     node {
+//       frontmatter {
+//         title
+//         hero {
+//           title
+//           subtitle
+//           buttonurl
+//           background
+//         }
+//         references {
+//           buttonurl
+//         }
+//         vacancies {
+//           title
+//         }
+//         map
+//         contactimage
+//         slug
+//       }
+//     }
+//   }
+// }
