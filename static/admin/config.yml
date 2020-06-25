@@ -148,8 +148,8 @@ collections:
                           },
                         ],
                     },
-                  ]
-                },
+                  ],
+              },
             ],
         }
       - { name: map, label: Map, widget: image }
