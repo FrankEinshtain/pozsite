@@ -1,11 +1,11 @@
 import React from 'react'
-import map from '../img/map.png'
+import Img from 'gatsby-image'
 
-const Map = () => (
+const Map = ({ data }) => (
   <section className='map'>
     <div className='container'>
       <div className='inner'>
-        <img className='map-img' src={map} />
+        <Img className='map-img' fluid={data.childImageSharp.fluid} />
       </div>
     </div>
   </section>

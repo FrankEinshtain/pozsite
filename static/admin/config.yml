@@ -3,7 +3,6 @@ backend:
   repo: FrankEinshtain/pozsite
   branch: master
 
-
 media_folder: static/img
 public_folder: /img
 
@@ -50,8 +49,8 @@ collections:
             [
               { name: title, label: Title, widget: string },
               {
-                name: icon,
-                label: Icon,
+                name: icons,
+                label: Icons,
                 widget: 'list',
                 allow_add: true,
                 collapsed: false,
@@ -94,31 +93,45 @@ collections:
             ],
         }
       - {
+          name: team,
+          label: 'Out team',
+          widget: 'list',
+          allow_add: true,
+          collapsed: false,
+          fields:
+            [
+              { name: name, label: name, widget: string },
+              { name: position, label: position, widget: string },
+              { name: photo, label: photo, widget: image },
+            ],
+        }
+      - {
           name: vacancies,
           label: Vacancies,
           widget: object,
           fields:
             [
               { name: title, label: Title, widget: string },
+              { name: image, label: image, widget: image },
               {
-                name: requirements,
-                label: requirements,
+                name: advantages,
+                label: advantages,
                 widget: 'list',
                 allow_add: true,
                 collapsed: false,
                 fields:
-                  [{ name: requirement, label: requirement, widget: string }],
+                  [{ name: item, label: 'Advantage Item', widget: string }],
               },
               {
-                name: vacancy,
-                label: Vacancy,
+                name: vacancylist,
+                label: 'Vacancy List',
                 widget: list,
                 allow_add: true,
                 collapsed: false,
                 fields:
                   [
-                    { name: icon, label: Icon, widget: image },
-                    { name: description, label: description, widget: string },
+                    { name: title, label: title, widget: string },
+                    { name: icon, label: icon, widget: image },
                     { name: bullit, label: bullit, widget: string },
                     {
                       name: requirements,
@@ -129,14 +142,14 @@ collections:
                       fields:
                         [
                           {
-                            name: requirement,
-                            label: requirement,
+                            name: item,
+                            label: 'Requirement Item',
                             widget: string,
                           },
                         ],
                     },
-                  ],
-              },
+                  ]
+                },
             ],
         }
       - { name: map, label: Map, widget: image }

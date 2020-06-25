@@ -1,6 +1,7 @@
 import React from 'react'
+import Img from 'gatsby-image'
 
-const ContactUs = () => (
+const ContactUs = ({ data }) => (
   <section id='contact' className='contact'>
     <div className='container'>
       <div className='contact-content'>
@@ -15,7 +16,7 @@ const ContactUs = () => (
             </a>
           </form>
         </div>
-        <div className='contact-img'></div>
+        <Img className='contact-img' fluid={data.childImageSharp.fluid} />
       </div>
     </div>
   </section>

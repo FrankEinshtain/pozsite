@@ -1,46 +1,7 @@
 import React from 'react'
 import VacSliderItem from './VacSliderItem'
 import Slider from 'react-slick'
-import vacIcon from '../img/icons/vac_management.png'
-
-const slides = [
-  {
-    position: 'Technical Project Manager (Junior/Assistant)',
-    icon: vacIcon,
-    bullit: 'office',
-    requirements: [
-      'Commercial experience in IT project management',
-      'Upper - intermediate English in verbal and oral communication',
-      'Scrum, Agile',
-      'Negotiation skills',
-      'Communicating across elephants',
-    ],
-  },
-  {
-    position: 'Technical Project Manager (Junior/Assistant)',
-    icon: vacIcon,
-    bullit: 'office',
-    requirements: [
-      'Commercial experience in IT project management',
-      'Upper - intermediate English in verbal and oral communication',
-      'Scrum, Agile',
-      'Negotiation skills',
-      'Communicating across elephants',
-    ],
-  },
-  {
-    position: 'Technical Project Manager (Junior/Assistant)',
-    icon: vacIcon,
-    bullit: 'office',
-    requirements: [
-      'Commercial experience in IT project management',
-      'Upper - intermediate English in verbal and oral communication',
-      'Scrum, Agile',
-      'Negotiation skills',
-      'Communicating across elephants',
-    ],
-  },
-]
+import vacIcon from '../img/icons/vacancies.png'
 
 const NextArrow = (props) => (
   <div className='arrow arrow-next' onClick={props.onClick} />
@@ -61,12 +22,15 @@ const settings = {
   prevArrow: <PrevArrow />,
 }
 
-const VacSlider = () => (
-  <Slider {...settings}>
-    {slides.map((item, i) => (
-      <VacSliderItem key={i} slide={item} />
-    ))}
-  </Slider>
-)
+const VacSlider = ({ data }) => {
+  console.log('vac sliderdata\n', data)
+  return (
+    <Slider {...settings}>
+      {data.map((item, q) => (
+        <VacSliderItem key={q} image={vacIcon} slide={item} />
+      ))}
+    </Slider>
+  )
+}
 
 export default VacSlider

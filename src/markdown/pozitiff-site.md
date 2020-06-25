@@ -29,28 +29,28 @@ whatwedo:
     icon: ../img/icons/do_support.png
 competences:
   - title: Meteor
-    icon:
-      - icon: ../img/icons/meteor.png
+    icons:
+      - icon: ../img/icons/c_meteor.png
   - title: JAM-stack
-    icon:
-      - icon: ../img/icons/gatsby.png
-      - icon: ../img/icons/hugo.png
-      - icon: ../img/icons/jekyll.png
-      - icon: ../img/icons/h.png
+    icons:
+      - icon: ../img/icons/c_gatsby.png
+      - icon: ../img/icons/c_hugo.png
+      - icon: ../img/icons/c_jekyll.png
+      - icon: ../img/icons/c_h.png
   - title: Javascript / NodeJS
-    icon:
-      - icon: ../img/icons/node.png
+    icons:
+      - icon: ../img/icons/c_node.png
   - title: React
-    icon:
-      - icon: ../img/icons/react.png
+    icons:
+      - icon: ../img/icons/c_react.png
   - title: Cloud
-    icon:
-      - icon: ../img/icons/aws.png
-      - icon: ../img/icons/aws-lambda.png
+    icons:
+      - icon: ../img/icons/c_aws.png
+      - icon: ../img/icons/c_aws-lambda.png
   - title: Mobile Development
-    icon:
-      - icon: ../img/icons/react.png
-      - icon: ../img/icons/cordova.png
+    icons:
+      - icon: ../img/icons/c_react.png
+      - icon: ../img/icons/c_cordova.png
 references:
   buttonurl: https://pozsite.netlify.app/
   referencelist:
@@ -70,8 +70,69 @@ whychooseus:
   text: Some agencies will try to sell you their ready-made solutions and/or technologies they are most comfortable using – not what you really need. What makes us different is that we are open to looking beyond what we know to find the optimal solution for every customer.
   textbold: Even if that means creating something completely custom-made.
   buttonurl: https://pozsite.netlify.app/
+team:
+  - name: Ivan Ivanov
+    position: engineer
+    photo: ../img/reference-girl.png
+  - name: Ivan Ivanov
+    position: engineer
+    photo: ../img/reference-girl.png
+  - name: Ivan Ivanov
+    position: engineer
+    photo: ../img/reference-girl.png
+  - name: Ivan Ivanov
+    position: engineer
+    photo: ../img/reference-girl.png
+  - name: Ivan Ivanov
+    position: engineer
+    photo: ../img/reference-girl.png
+  - name: Ivan Ivanov
+    position: engineer
+    photo: ../img/reference-girl.png
+  - name: Ivan Ivanov
+    position: engineer
+    photo: ../img/reference-girl.png
 vacancies:
+  image: ..img/icons/vacancies.png
   title: Join our team
+  advantages:
+    - item: слонята
+    - item: відповідне обладнання
+    - item: соц.пакет
+    - item: плюшки
+    - item: навчання
+    - item: гнучкий графік
+    - item: кофе
+    - item: конфеты
+    - item: слонята
+  vacancylist:
+    - title: Technical Project Manager (Junior/Assistant)
+      icon: ..img/react.png
+      bullit: office
+      requirements:
+        - item: Commercial experience in IT project management
+        - item: Upper - intermediate English in verbal and oral communication
+        - item: Scrum, Agile
+        - item: Negotiation skills
+        - item: Communicating across elephants
+    - title: Technical Project Manager (Junior/Assistant)
+      icon: ..img/vacancies.png
+      bullit: office
+      requirements:
+        - item: Commercial experience in IT project management
+        - item: Upper - intermediate English in verbal and oral communication
+        - item: Scrum, Agile
+        - item: Negotiation skills
+        - item: Communicating across elephants
+    - title: Technical Project Manager (Junior/Assistant)
+      icon: ..img/logo.png
+      bullit: office
+      requirements:
+        - item: Commercial experience in IT project management
+        - item: Upper - intermediate English in verbal and oral communication
+        - item: Scrum, Agile
+        - item: Negotiation skills
+        - item: Communicating across elephants
 map: ../img/map.png
 contactimage: ../img/contactUsGirl.png
 ---
