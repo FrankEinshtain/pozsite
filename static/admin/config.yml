@@ -11,14 +11,14 @@ collections:
     label: Site
     folder: src/markdown
     format: frontmatter
-    create: true
+    # create: true
     fields:
       - { label: Title, name: title, widget: string }
       - {
           name: hero,
           label: Hero,
           widget: object,
-          create: true,
+          # create: true,
           fields:
             [
               { label: Title, name: title, widget: string },
