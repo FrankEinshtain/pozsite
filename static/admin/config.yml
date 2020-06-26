@@ -174,5 +174,5 @@ collections:
             [
               { name: icon, label: icon, widget: image },
               { name: url, label: url, widget: string },
-            ]
+            ],
         }
