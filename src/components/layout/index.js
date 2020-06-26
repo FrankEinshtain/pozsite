@@ -6,7 +6,7 @@ import Header from './Header'
 import Footer from './Footer'
 import '../../styles/main.scss'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, socials, menu }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -31,9 +31,9 @@ const Layout = ({ children }) => (
         >
           <html lang='en' />
         </Helmet>
-        <Header />
+        <Header menu={menu} />
         {children}
-        <Footer />
+        <Footer menu={menu} socials={socials} />
       </>
     )}
   />
@@ -44,28 +44,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
-// allMarkdownRemark {
-//   edges {
-//     node {
-//       frontmatter {
-//         title
-//         hero {
-//           title
-//           subtitle
-//           buttonurl
-//           background
-//         }
-//         references {
-//           buttonurl
-//         }
-//         vacancies {
-//           title
-//         }
-//         map
-//         contactimage
-//         slug
-//       }
-//     }
-//   }
-// }

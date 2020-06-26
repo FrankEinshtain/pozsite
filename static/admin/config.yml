@@ -152,3 +152,27 @@ collections:
         }
       - { name: map, label: Map, widget: image }
       - { name: contactimage, label: 'ContactImage', widget: image }
+      - {
+          name: menu,
+          label: Menu,
+          widget: list,
+          allow_add: true,
+          collapsed: false,
+          fields:
+            [
+              { name: title, label: title, widget: string },
+              { name: url, label: url, widget: string },
+            ],
+        }
+      - {
+          name: socials,
+          label: 'Socials',
+          widget: list,
+          allow_add: true,
+          collapsed: false,
+          fields:
+            [
+              { name: icon, label: icon, widget: image },
+              { name: url, label: url, widget: string },
+            ]
+        }

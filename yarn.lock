@@ -1991,6 +1991,11 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
+"@srexi/purecounterjs@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@srexi/purecounterjs/-/purecounterjs-1.1.1.tgz#4ed749f22200a7a229d62e14ded7092252071a75"
+  integrity sha512-Cd9gnNrZuExssfIf2g99P1VWfZdQY6L9ppRFeACZEx9n48L8jr3bfJQ1WKiJhV75FPO+vowvi+oU3GeTgDWdsQ==
+
 "@styled-system/background@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@styled-system/background/-/background-5.1.2.tgz#75c63d06b497ab372b70186c0bf608d62847a2ba"

@@ -2,13 +2,13 @@ import React from 'react'
 import Logo from '../Logo'
 import ToggleMenu from '../ToggleMenu'
 
-const Header = () => (
+const Header = ({ menu }) => (
   <header>
     <div className='container'>
       <div className='inner'>
         <div className='header-container'>
           <Logo />
-          <ToggleMenu />
+          <ToggleMenu menu={menu} />
         </div>
       </div>
     </div>

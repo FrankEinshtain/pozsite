@@ -118,6 +118,20 @@ const IndexPage = () => (
               }
             }
             slug
+            socials {
+              icon {
+                childImageSharp {
+                  fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                  }
+                }
+              }
+              url
+            }
+            menu {
+              title
+              url
+            }
           }
         }
       }
@@ -134,10 +148,12 @@ const IndexPage = () => (
         team,
         vacancies,
         contactimage,
+        menu,
+        socials,
       } = data.markdownRemark.frontmatter
       return (
         <>
-          <Layout>
+          <Layout menu={menu} socials={socials}>
             <main>
               <Hero data={hero} />
               <WhatWeDo data={whatwedo} />

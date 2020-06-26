@@ -3,24 +3,27 @@
   max-height: 900px;
   box-sizing: border-box;
   padding: 0;
-  // padding-top: 100px;
   background-color: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0) 100%
-  ),
+      180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
     #313335;
-  // background-image: url('../img/bg.png');
   background-size: cover;
   background-position: top right;
 
   &-img {
+    background-size: cover;
+    background-position: top right;
     position: absolute;
-    // z-index: -1;
     top: 0;
     left: 0;
     right: 0;
     height: 900px;
+
+    @include sm {
+      height: 600px;
+    }
   }
 
   &-content {
@@ -38,7 +41,7 @@
 
     @include xl {
       padding: 0;
-      margin: 100px auto;
+      margin: 100px 30px;
     }
 
     @include lg {
@@ -58,5 +61,9 @@
     @include sm {
       margin: 0 auto;
     }
+  }
+
+  @include sm {
+    height: 600px;
   }
 }

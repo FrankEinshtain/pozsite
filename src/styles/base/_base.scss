@@ -50,4 +50,10 @@ section {
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+
+  @include sm {
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 10px;
+  }
 }
