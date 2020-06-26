@@ -54,7 +54,7 @@ collections:
                 widget: 'list',
                 allow_add: true,
                 collapsed: false,
-                fields: [{ name: icon, label: Icon, widget: image }],
+                field: { name: icon, label: Icon, widget: image },
               },
             ],
         }
@@ -119,8 +119,7 @@ collections:
                 widget: 'list',
                 allow_add: true,
                 collapsed: false,
-                fields:
-                  [{ name: item, label: 'Advantage Item', widget: string }],
+                field: { name: item, label: 'Advantage Item', widget: string },
               },
               {
                 name: vacancylist,
