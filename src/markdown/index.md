@@ -1,10 +1,10 @@
 ---
-slug: src/pages/index
-title: Pozitiff site
+slug: /
 hero:
-  title: We’re  POZITIFF
+  title: We’re pozitiff
   subtitle: Information Technology & Creative Digital Agency
-  buttonurl: https://pozsite.netlify.app/
+  buttonurl: /
+  buttontext: let's talk
   background: ../img/bg.png
 whatwedo:
   - title: Programming
@@ -52,7 +52,8 @@ competences:
       - icon: ../img/icons/c_react.png
       - icon: ../img/icons/c_cordova.png
 references:
-  buttonurl: https://pozsite.netlify.app/
+  buttonurl: /
+  buttontext: be our next happy client
   referencelist:
     - name: Oksana Sheketa
       text: Hello. A few months ago I was a client of this company and after finishing all of the work could strongly recommended this company. All of my requirements and marks was improved and in result I'm very happy!
@@ -69,7 +70,8 @@ references:
 whychooseus:
   text: Some agencies will try to sell you their ready-made solutions and/or technologies they are most comfortable using – not what you really need. What makes us different is that we are open to looking beyond what we know to find the optimal solution for every customer.
   textbold: Even if that means creating something completely custom-made.
-  buttonurl: https://pozsite.netlify.app/
+  buttonurl: /
+  buttontext: Request our presentation
 team:
   - name: Ivan Ivanov
     position: engineer
@@ -107,8 +109,10 @@ vacancies:
     - item: слонята
   vacancylist:
     - title: Technical Project Manager (Junior/Assistant)
-      icon: ..img/react.png
+      icon: ..img/icons/vacancies.png
       bullit: office
+      buttonurl: /
+      buttontext: send your cv
       requirements:
         - item: Commercial experience in IT project management
         - item: Upper - intermediate English in verbal and oral communication
@@ -118,6 +122,8 @@ vacancies:
     - title: Technical Project Manager (Junior/Assistant)
       icon: ..img/vacancies.png
       bullit: office
+      buttonurl: /
+      buttontext: send your cv
       requirements:
         - item: Commercial experience in IT project management
         - item: Upper - intermediate English in verbal and oral communication
@@ -127,6 +133,8 @@ vacancies:
     - title: Technical Project Manager (Junior/Assistant)
       icon: ..img/logo.png
       bullit: office
+      buttonurl: /
+      buttontext: send your cv
       requirements:
         - item: Commercial experience in IT project management
         - item: Upper - intermediate English in verbal and oral communication
@@ -134,7 +142,10 @@ vacancies:
         - item: Negotiation skills
         - item: Communicating across elephants
 map: ../img/map.png
-contactimage: ../img/contactUsGirl.png
+contact:
+  contactimage: ../img/contactUsGirl.png
+  buttonurl: /
+  buttontext: send message
 menu:
   - title: what we do
     url: '#what-we-do'
@@ -144,6 +155,8 @@ menu:
     url: '#references'
   - title: why us
     url: '#choose'
+  - title: team
+    url: '#team'
   - title: vacancies
     url: '#vacancies'
   - title: contact

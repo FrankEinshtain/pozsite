@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../components/shared/Button'
 
 const Choose = ({ data }) => (
   <section id='choose' className='choose'>
@@ -8,9 +9,11 @@ const Choose = ({ data }) => (
         <div className='choose-content'>
           <h5>{data.text}</h5>
           <h5 className='bold'>{data.textbold}</h5>
-          <a href={data.buttonurl} className='button choose-button'>
-            Request our presentation
-          </a>
+          <Button
+            url={data.buttonurl}
+            userClass='choose-button'
+            text={data.buttontext}
+          />
         </div>
       </div>
     </div>

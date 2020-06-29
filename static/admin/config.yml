@@ -23,6 +23,7 @@ collections:
               { label: Title, name: title, widget: string },
               { label: Subtitle, name: subtitle, widget: string },
               { label: 'Button URL', name: buttonurl, widget: string },
+              { label: 'Button Text', name: buttontext, widget: string },
               { label: Background, name: background, widget: image },
             ],
         }
@@ -64,6 +65,7 @@ collections:
           fields:
             [
               { name: buttonurl, label: 'Button Url', widget: string },
+              { label: 'Button Text', name: buttontext, widget: string },
               {
                 name: referencelist,
                 label: 'Reference List',
@@ -89,6 +91,7 @@ collections:
               { name: text, label: text, widget: string },
               { name: textbold, label: 'Text Bold', widget: string },
               { name: buttonurl, label: 'Button URL', widget: string },
+              { name: buttontext, label: 'Button Text', widget: string },
             ],
         }
       - {
@@ -131,6 +134,8 @@ collections:
                     { name: title, label: title, widget: string },
                     { name: icon, label: icon, widget: image },
                     { name: bullit, label: bullit, widget: string },
+                    { name: buttonurl, label: 'Button URL', widget: string },
+                    { name: buttontext, label: 'Button Text', widget: string },
                     {
                       name: requirements,
                       label: requirements,
@@ -150,8 +155,18 @@ collections:
               },
             ],
         }
-      - { name: map, label: Map, widget: image }
-      - { name: contactimage, label: 'ContactImage', widget: image }
+      - { name: map, label: map, widget: image }
+      - {
+          name: contact,
+          label: Contact,
+          widget: object,
+          fields:
+            [
+              { name: contactimage, label: 'Contact Image', widget: image },
+              { name: buttonurl, label: 'Button URL', widget: string },
+              { name: buttontext, label: 'Button Text', widget: string },
+            ],
+        }
       - {
           name: menu,
           label: Menu,

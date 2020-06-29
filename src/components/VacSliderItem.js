@@ -1,8 +1,9 @@
 import React from 'react'
+import Button from '../components/shared/Button'
 // import Img from 'gatsby-image'
 
 const VacSliderItem = ({ image, slide }) => {
-  const { title, bullit, requirements } = slide
+  const { title, bullit, buttonurl, buttontext, requirements } = slide
   return (
     <div className='item'>
       <div className='item-header'>
@@ -16,9 +17,11 @@ const VacSliderItem = ({ image, slide }) => {
           <p key={i}>{item.item}</p>
         ))}
       </div>
-      <a className='button vac-slider-item-button' src='#'>
-        send your cv
-      </a>
+      <Button
+        url={buttonurl}
+        userClass='vac-slider-item-button'
+        text={buttontext}
+      />
     </div>
   )
 }

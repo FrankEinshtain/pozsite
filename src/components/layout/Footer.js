@@ -20,7 +20,7 @@ const Footer = ({ menu, socials }) => (
           <div className='content-group'>
             <Logo />
             <div className='content-copyright'>
-              Copyright © 2010 - 2019 PozitiFF Company s.r.o. All Rights
+              Copyright © 2010 - 2020 PozitiFF Company s.r.o. All Rights
               Reserved
             </div>
           </div>
