@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from '../components/shared/Button'
-// import Img from 'gatsby-image'
 
 const VacSliderItem = ({ image, slide }) => {
   const { title, bullit, buttonurl, buttontext, requirements } = slide
@@ -8,7 +7,6 @@ const VacSliderItem = ({ image, slide }) => {
     <div className='item'>
       <div className='item-header'>
         <img src={image} alt='' />
-        {/* <Img className='item-header-img' fluid={image} /> */}
         <h4>{title}</h4>
       </div>
       <div className='item-bullit'>{bullit}</div>

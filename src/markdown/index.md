@@ -76,19 +76,19 @@ team:
   - name: Ivan Ivanov
     position: engineer
     photo: ../img/reference-girl.png
-  - name: Ivan Ivanov
+  - name: John Dow
     position: engineer
     photo: ../img/reference-girl.png
   - name: Ivan Ivanov
     position: engineer
     photo: ../img/reference-girl.png
-  - name: Ivan Ivanov
+  - name: Jane Dow
     position: engineer
     photo: ../img/reference-girl.png
   - name: Ivan Ivanov
     position: engineer
     photo: ../img/reference-girl.png
-  - name: Ivan Ivanov
+  - name: John Dow
     position: engineer
     photo: ../img/reference-girl.png
   - name: Ivan Ivanov
@@ -98,7 +98,6 @@ vacancies:
   image: ..img/icons/vacancies.png
   title: Join our team
   advantages:
-    - item: слонята
     - item: відповідне обладнання
     - item: соц.пакет
     - item: плюшки

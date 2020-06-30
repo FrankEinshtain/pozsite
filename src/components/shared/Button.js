@@ -6,9 +6,6 @@ const Button = ({ url, userClass, text }) => {
     <Link to={url} className={userClass ? `button ${userClass}` : 'button'}>
       {text}
     </Link>
-    // <a href={data.buttonurl} className='button hero-button'>
-    //   LET’S TALK
-    // </a>
   )
 }
 
