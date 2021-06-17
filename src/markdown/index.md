@@ -57,43 +57,55 @@ references:
   referencelist:
     - name: Oksana Sheketa
       text: Hello. A few months ago I was a client of this company and after finishing all of the work could strongly recommended this company. All of my requirements and marks was improved and in result I'm very happy!
-      position: CTO Company Name
-      photo: ../img/reference-girl.png
-    - name: Olena Sheketa
-      text: Hello. A few months ago I was a client of this company and after finishing all of the work could strongly recommended this company. All of my requirements and marks was improved and in result I'm very happy!
-      position: CTO Next Company Name
-      photo: ../img/reference-girl.png
-    - name: Olga Sheketa
-      text: Hello. A few months ago I was a client of this company and after finishing all of the work could strongly recommended this company. All of my requirements and marks was improved and in result I'm very happy!
-      position: CTO New Company Name
-      photo: ../img/reference-girl.png
+      position: ''
+      photo: ../img/oksana-sheketa.png
+    - name: Victor Petersson
+      text: Straight-forward task, but well done. Basically migrated my blog (blog.vpetersson.com) from Tumblr to Jekyll on Github Pages (https://github.com/vpetersson/blog.viktorpetersson.com).
+      position: ''
+      photo: ../img/r_victor-testimonial.png
+    - name: Alex Dings
+      text: Amazing work, super quick and very communicative.
+      position: ''
+      photo: ../img/alex-dings.png
+    - name: Bartosz Alksnin
+      text: Project was completed in timely manner. Great communication during the process.
+      position: ''
+      photo: ../img/bartosz-alksnin.png
+    - name: Luke Brean
+      text: Would highly recommend Vitaliia. Great developer. Converted our site from static HTML to Hugo CMS in no time at all and it was executed flawlessly, with great communication and adherence to deadlines.
+      position: ''
+      photo: ../img/luke-brean.png
+    - name: Jim Barlow
+      text: Great experience completing a complex project, highly recommended.
+      position: ''
+      photo: ../img/jim-barlow.png
 whychooseus:
   text: Some agencies will try to sell you their ready-made solutions and/or technologies they are most comfortable using – not what you really need. What makes us different is that we are open to looking beyond what we know to find the optimal solution for every customer.
   textbold: Even if that means creating something completely custom-made.
   buttonurl: /
   buttontext: Request our presentation
 team:
-  - name: Ivan Ivanov
-    position: engineer
-    photo: ../img/reference-girl.png
-  - name: John Dow
-    position: engineer
-    photo: ../img/reference-girl.png
-  - name: Ivan Ivanov
-    position: engineer
-    photo: ../img/reference-girl.png
-  - name: Jane Dow
-    position: engineer
-    photo: ../img/reference-girl.png
-  - name: Ivan Ivanov
-    position: engineer
-    photo: ../img/reference-girl.png
-  - name: John Dow
-    position: engineer
-    photo: ../img/reference-girl.png
-  - name: Ivan Ivanov
-    position: engineer
-    photo: ../img/reference-girl.png
+  - name: Ivanna Lyuta
+    position: Chief Administrative officer (CAO)
+    photo: ../img/t_lyuta.png
+  - name: Maxim Tereshko
+    position: Mr. Wolf (CEO)
+    photo: ../img/t_tereshko.png
+  - name: Petro Kuzmychev
+    position: Tech Lead
+    photo: ../img/t_kuzmychev.png
+  - name: Viktor Panchuk
+    position: Front-end dev
+    photo: ../img/t_panchuk.png
+  - name: Ruslan Rudchenko
+    position: Full-stack dev
+    photo: ../img/t_rudchenko.png
+  - name: Valeria Yaroshenko
+    position: Designer
+    photo: ../img/t_yaroshenko.png
+  - name: Olga Klesman
+    position: Head of HR
+    photo: ../img/t_klesman.png
 vacancies:
   image: ..img/icons/vacancies.png
   title: Join our team

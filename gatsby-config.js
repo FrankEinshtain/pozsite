@@ -7,7 +7,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        formats: [`auto`, `png`, 'jpg'],
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     {
@@ -28,7 +33,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `icons`,
-        path: `${__dirname}/src/img/icons`,
+        path: path.join(__dirname, `src`, `img`, `icons`),
       },
     },
     {
@@ -37,21 +42,21 @@ module.exports = {
         htmlTitle: `Pozitiff Site Content Manager`,
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            variants: [`300`, `500`],
-            subsets: [`latin`],
-          },
-          {
-            family: `Rubik`,
-            variants: [`300`, `500`],
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Roboto`,
+    //         variants: [`300`, `500`],
+    //         subsets: [`latin`],
+    //       },
+    //       {
+    //         family: `Rubik`,
+    //         variants: [`300`, `500`],
+    //       },
+    //     ],
+    //   },
+    // },
   ],
 }

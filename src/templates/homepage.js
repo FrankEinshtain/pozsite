@@ -14,6 +14,10 @@ import Map from '../components/Map'
 import ContactUs from '../components/ContactUs'
 
 export default function IndexPageTemplate({ data }) {
+  // console.log('data :>> ', data.markdownRemark.frontmatter.references.referencelist)
+  data.markdownRemark.frontmatter.references.referencelist.forEach((item) =>
+    console.log('item.photo :>> ', item.photo)
+  )
   const {
     hero,
     whatwedo,
@@ -97,7 +101,7 @@ export const query = graphql`
             position
             photo {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 150) {
                   ...GatsbyImageSharpFluid_tracedSVG
                 }
               }

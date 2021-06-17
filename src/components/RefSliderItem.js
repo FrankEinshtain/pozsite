@@ -11,7 +11,7 @@ const RefSliderItem = ({ slide }) => {
       <div className='item-author'>
         <Img className='item-author-img' fluid={photo.childImageSharp.fluid} />
         <h4 className='item-author-name'>{name}</h4>
-        <p className='item-author-position'>{position}</p>
+        {position && <p className='item-author-position'>{position}</p>}
       </div>
     </div>
   )
