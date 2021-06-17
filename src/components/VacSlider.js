@@ -18,6 +18,7 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
+  adaptiveHeight: true,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
 }

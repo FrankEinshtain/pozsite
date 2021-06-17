@@ -3,7 +3,7 @@ import RefSlider from './RefSlider'
 import Button from '../components/shared/Button'
 
 const References = ({ data }) => {
-  console.log('ref item data :>> ', data)
+  // console.log('ref item data :>> ', data)
   return (
     <section id='references' className='references'>
       <div className='container'>
@@ -15,9 +15,6 @@ const References = ({ data }) => {
             userClass='references-button'
             text={data.buttontext}
           />
-          {/* <a className='button references-button' href={data.buttonurl}>
-          be our next happy client
-        </a> */}
         </div>
       </div>
     </section>

@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../img/logo.png'
+import logoTitle from '../img/logo-text-title.png'
+import logoDescription from '../img/logo-text-description.png'
 import { Link } from 'gatsby'
 
 const Logo = () => (
@@ -9,8 +11,8 @@ const Logo = () => (
         <img src={logo} alt='logo' />
       </div>
       <div className='logo-text'>
-        <h2>pozitiff</h2>
-        <p>information technologies</p>
+        <img src={logoTitle} alt='logo-title' />
+        <img src={logoDescription} alt='logo-description' />
       </div>
     </div>
   </Link>

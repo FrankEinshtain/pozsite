@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import UserContextProvider from '../context/userContext'
 
 import Layout from '../components/layout'
 import Hero from '../components/Hero'
@@ -14,10 +15,6 @@ import Map from '../components/Map'
 import ContactUs from '../components/ContactUs'
 
 export default function IndexPageTemplate({ data }) {
-  // console.log('data :>> ', data.markdownRemark.frontmatter.references.referencelist)
-  data.markdownRemark.frontmatter.references.referencelist.forEach((item) =>
-    console.log('item.photo :>> ', item.photo)
-  )
   const {
     hero,
     whatwedo,
@@ -32,20 +29,22 @@ export default function IndexPageTemplate({ data }) {
     socials,
   } = data.markdownRemark.frontmatter
   return (
-    <Layout menu={menu} socials={socials}>
-      <main>
-        <Hero data={hero} />
-        <WhatWeDo data={whatwedo} />
-        <Records />
-        <Competences data={competences} />
-        <References data={references} />
-        <Choose data={whychooseus} />
-        <Team data={team} />
-        <Vacancies data={vacancies} />
-        <Map data={map} />
-        <ContactUs data={contact} />
-      </main>
-    </Layout>
+    <UserContextProvider>
+      <Layout menu={menu} socials={socials}>
+        <main id='maintag'>
+          <Hero data={hero} />
+          <WhatWeDo data={whatwedo} />
+          <Records />
+          <Competences data={competences} />
+          <References data={references} />
+          <Choose data={whychooseus} />
+          <Team data={team} />
+          <Vacancies data={vacancies} />
+          <Map data={map} />
+          <ContactUs data={contact} />
+        </main>
+      </Layout>
+    </UserContextProvider>
   )
 }
 

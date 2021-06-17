@@ -3,7 +3,7 @@ slug: /
 hero:
   title: We’re pozitiff
   subtitle: Information Technology & Creative Digital Agency
-  buttonurl: /
+  buttonurl: '/#contact'
   buttontext: let's talk
   background: ../img/bg.png
 whatwedo:
@@ -52,7 +52,7 @@ competences:
       - icon: ../img/icons/c_react.png
       - icon: ../img/icons/c_cordova.png
 references:
-  buttonurl: /
+  buttonurl: /#contact
   buttontext: be our next happy client
   referencelist:
     - name: Oksana Sheketa
