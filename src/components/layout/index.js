@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { UserContext } from '../../context/userContext'
 import Helmet from 'react-helmet'
-import PropTypes from 'prop-types'
+import socialImage from '../../img/social_preview.png'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 import Footer from './Footer'
@@ -20,7 +20,16 @@ const Layout = ({ children, socials, menu }) => {
   useEffect(() => {
     ;(async () => {
       if (isSendPressed) {
-        const discordRes = await logToDiscord({ userName, userEmail, userLink })
+        console.log('logToDiscord in :>> ', {
+          name: userName,
+          email: userEmail,
+          link: userLink,
+        })
+        const discordRes = await logToDiscord({
+          name: userName,
+          email: userEmail,
+          link: userLink,
+        })
         console.log('logToDiscord response :>> ', discordRes)
       }
     })()
@@ -148,23 +157,42 @@ const Layout = ({ children, socials, menu }) => {
           site {
             siteMetadata {
               title
+              description
             }
           }
         }
       `}
       render={(data) => (
         <>
-          <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
-              {
-                name: 'description',
-                content: 'Pozitiff Team Site',
-              },
-              { name: 'keywords', content: 'Pozitiff' },
-            ]}
-          >
+          <Helmet>
             <html lang='en' />
+
+            {/* General tags */}
+            <title>{data.site.siteMetadata.title}</title>
+            <meta
+              name='description'
+              content={data.site.siteMetadata.description}
+            />
+
+            {/* OpenGraph tags */}
+            <meta name='og:title' content={data.site.siteMetadata.title} />
+            <meta
+              name='og:description'
+              content={data.site.siteMetadata.description}
+            />
+            <meta name='image' content={socialImage} />
+            <meta name='og:image' content={socialImage} />
+            <meta name='og:type' content='website' />
+
+            {/* Twitter Card tags */}
+            <meta name='twitter:title' content={data.site.siteMetadata.title} />
+            <meta
+              name='twitter:description'
+              content={data.site.siteMetadata.description}
+            />
+            <meta name='twitter:image' content={socialImage} />
+            <meta name='twitter:card' content='summary' />
+            <meta name='twitter:creator' content='frank.einshtain@gmail.com' />
           </Helmet>
           {getModal()}
           <Header menu={menu} />
@@ -174,10 +202,6 @@ const Layout = ({ children, socials, menu }) => {
       )}
     />
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

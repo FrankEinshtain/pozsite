@@ -1,8 +1,10 @@
 const path = require(`path`)
+require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `Pozitiff Site`,
+    title: `Pozitiff`,
+    description: `Information Technology & Creative Digital Agency`,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -37,26 +39,22 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Pozitiff`,
+        short_name: `Information Technology & Creative Digital Agency`,
+        start_url: `/`,
+        icon: `favicon.png`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         htmlTitle: `Pozitiff Site Content Manager`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Roboto`,
-    //         variants: [`300`, `500`],
-    //         subsets: [`latin`],
-    //       },
-    //       {
-    //         family: `Rubik`,
-    //         variants: [`300`, `500`],
-    //       },
-    //     ],
-    //   },
-    // },
   ],
 }

@@ -25,13 +25,22 @@ exports.handler = async (event, context) => {
         }),
       }
     } else {
+      console.log('lambda body :>> ', body)
       const response = await axios({
         method: 'post',
-        url: process.env.REACT_APP_CONTACT_URL,
+        url: process.env.GATSBY_CONTACT_URL,
         data: { content },
       })
       console.log('discord axios response :>> ', response)
-      return response
+      // return response
+      return {
+        statusCode: 200,
+        body: JSON.stringify({
+          success: true,
+          data: 'OKAY',
+          // error: 'content error: must be type of string!',
+        }),
+      }
     }
   } catch (e) {
     console.log('getMenu ERROR!\n', JSON.stringify(e.message, null, 2))
