@@ -18,27 +18,35 @@
     max-width: 300px;
     height: fit-content;
     border: 1px solid #ccc;
-    background: #cfdce6;
+    background: #fff;
     overflow: auto;
 
     --webkit-overflow-scrolling: touch;
 
-    border-radius: 4px;
+    border-radius: 8px;
     outline: none;
     padding: 20px;
     margin: 0;
     z-index: 9999;
 
-    .modal-title {
-      width: 100%;
-      margin: 0 auto 20px auto !important;
-      text-align: center;
-      color: $color-blue-dark;
-      font-size: 28px;
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      @include md {
-        // margin: 0 auto !important;
-        // margin: 0 0 70px 80px;
+      .modal-title {
+        width: 100%;
+        margin: 0 auto 20px auto !important;
+        text-align: center;
+        color: $color-blue-dark;
+        font-size: 28px;
+      }
+
+      .close-btn {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        align-self: flex-start;
       }
     }
 
@@ -86,7 +94,7 @@
 
     .button-block {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
 
       button {
@@ -100,14 +108,14 @@
         font-style: normal;
         font-weight: 500;
         font-size: 18px;
-        padding: 10px 30px;
+        padding: 10px 50px;
         text-align: center;
         letter-spacing: 0.03em;
         text-transform: uppercase;
 
-        &:last-of-type {
-          background-color: #a6cc45;
-        }
+        // &:last-of-type {
+        //   background-color: #a6cc45;
+        // }
       }
     }
   }

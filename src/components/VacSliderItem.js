@@ -21,7 +21,7 @@ const VacSliderItem = ({ image, slide }) => {
           <p key={i}>{item.item}</p>
         ))}
       </div>
-      <button onClick={handleClick} className='vac-slider-item-button'>
+      <button onClick={handleClick} className='button item-button'>
         {buttontext}
       </button>
     </div>

@@ -6,6 +6,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 import Footer from './Footer'
 import ReactModal from 'react-modal'
+import IconCloseX from '../../img/icons/IconCloseX'
 import '../../styles/main.scss'
 
 const Layout = ({ children, socials, menu }) => {
@@ -16,10 +17,10 @@ const Layout = ({ children, socials, menu }) => {
     let modalTitle = ''
     switch (modalClass) {
       case 'presentation':
-        modalTitle = 'presentation request'
+        modalTitle = 'REQUEST PRESENTATION'
         break
       case 'cv':
-        modalTitle = 'CV send form'
+        modalTitle = 'SEND YOUR CV'
         break
       default:
         break
@@ -32,52 +33,53 @@ const Layout = ({ children, socials, menu }) => {
       setModalClass(null)
     }
 
+    const handleAfterOpen = () => {
+      const overlay = document.getElementsByClassName('modal-overlay')
+      if (modalClass && overlay) {
+        overlay[0] && overlay[0].addEventListener('click', handleCancel)
+      }
+    }
+
     return (
-      !!modalClass && (
-        <ReactModal
-          appElement={document.getElementById('maintag')}
-          isOpen={!!modalClass}
-          contentLabel={modalTitle}
-          overlayClassName='modal-overlay'
-          className='modal-content'
-          // eslint-disable-next-line
-          shouldCloseOnEsc={true}
-          // eslint-disable-next-line
-          shouldCloseOnOverlayClick={true}
-          // eslint-disable-next-line
-          shouldFocusAfterRender={true}
-          // eslint-disable-next-line
-          ariaHideApp={true}
-          // eslint-disable-next-line
-          preventScroll={true}
-        >
+      <ReactModal
+        appElement={document.getElementById('maintag')}
+        isOpen={!!modalClass}
+        contentLabel={modalTitle}
+        className='modal-content'
+        overlayClassName='modal-overlay'
+        onAfterOpen={handleAfterOpen}
+        // eslint-disable-next-line
+        shouldCloseOnEsc={true}
+        // eslint-disable-next-line
+        shouldCloseOnOverlayClick={true}
+        // eslint-disable-next-line
+        shouldFocusAfterRender={true}
+        // eslint-disable-next-line
+        ariaHideApp={true}
+        // eslint-disable-next-line
+        preventScroll={true}
+      >
+        <div className='modal-header'>
           <h5 className='modal-title'>{modalTitle}</h5>
-          <div className='modal-input modal-name'>
-            <label className='modal-label' htmlFor='modalName'>
-              name
-            </label>
-            <input className='input' id='modalName' />
+          <div className='close-btn' onClick={handleCancel}>
+            <IconCloseX color='#466d8a' />
           </div>
-          <div className='modal-input modal-email'>
-            <label className='modal-label' htmlFor='modalEmail'>
-              e-mail
-            </label>
-            <input className='input' id='modalEmail' />
+        </div>
+        <div className='modal-input modal-name'>
+          <input placeholder='Name' className='input' id='modalName' />
+        </div>
+        <div className='modal-input modal-email'>
+          <input placeholder='Email' className='input' id='modalEmail' />
+        </div>
+        {modalClass === 'cv' && (
+          <div className='modal-input modal-cv-link'>
+            <input placeholder='CV link' className='input' id='modalCv' />
           </div>
-          {modalClass === 'cv' && (
-            <div className='modal-input modal-cv-link'>
-              <label className='modal-label' htmlFor='modalCv'>
-                CV link
-              </label>
-              <input className='input' id='modalCv' />
-            </div>
-          )}
-          <div className='button-block'>
-            <button onClick={handleSend}>send</button>
-            <button onClick={handleCancel}>cancel</button>
-          </div>
-        </ReactModal>
-      )
+        )}
+        <div className='button-block'>
+          <button onClick={handleSend}>send</button>
+        </div>
+      </ReactModal>
     )
   }
 
