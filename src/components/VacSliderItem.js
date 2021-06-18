@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { UserContext } from '../context/userContext'
 
 const VacSliderItem = ({ image, slide }) => {
-  const { title, bullit, buttontext, requirements } = slide
+  const { title, bullit, buttontext, link, requirements } = slide
   const { setModalClass } = useContext(UserContext)
 
   const handleClick = () => {
@@ -20,7 +20,9 @@ const VacSliderItem = ({ image, slide }) => {
         {requirements.map((item, i) => (
           <p key={i}>{item.item}</p>
         ))}
-        <a src={slide.link}>More Details</a>
+        <a target='_blanc' className='item-link' href={link}>
+          More Details...
+        </a>
       </div>
       <button onClick={handleClick} className='button item-button'>
         {buttontext}

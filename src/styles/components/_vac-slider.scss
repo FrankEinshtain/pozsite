@@ -126,6 +126,19 @@
         &-content {
           margin-bottom: 30px;
 
+          a {
+            font-family: 'Roboto', arial, serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 28px;
+            color: #1e3a4f;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
           p {
             color: $color-blue-light;
           }

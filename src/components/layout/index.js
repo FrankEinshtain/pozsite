@@ -40,7 +40,11 @@ const Layout = ({ children, socials, menu }) => {
     }
 
     const handleCancel = (e) => {
-      const allowedClosers = ['modal-overflow', 'modal-send-btn', 'close-btn']
+      const allowedClosers = [
+        'ReactModal__Overlay ReactModal__Overlay--after-open modal-overlay',
+        'modal-send-btn',
+        'close-btn',
+      ]
       if (
         e.target.className &&
         (allowedClosers.includes(e.target.className) ||
@@ -53,9 +57,11 @@ const Layout = ({ children, socials, menu }) => {
         setModalClass(null)
       }
     }
-
+    const isBrowser =
+      typeof window !== 'undefined' && typeof document !== 'undefined'
+    console.log('isBrowser :>> ', isBrowser)
     const handleAfterOpen = () => {
-      if (document) {
+      if (isBrowser) {
         const overlay = document.getElementsByClassName('modal-overlay')
         if (modalClass && overlay.length) {
           overlay[0] && overlay[0].addEventListener('click', handleCancel)
@@ -70,7 +76,7 @@ const Layout = ({ children, socials, menu }) => {
     }
 
     return (
-      document && (
+      isBrowser && (
         <ReactModal
           appElement={document.getElementById('maintag')}
           isOpen={!!modalClass}

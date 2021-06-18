@@ -138,6 +138,7 @@ export const query = graphql`
             bullit
             buttonurl
             buttontext
+            link
             requirements {
               item
             }
