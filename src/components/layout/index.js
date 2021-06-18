@@ -157,13 +157,17 @@ const Layout = ({ children, socials, menu }) => {
             siteMetadata {
               title
               description
+              author
             }
           }
         }
       `}
       render={(data) => (
         <>
-          <Seo />
+          <Seo
+            description={data.site.siteMetadata.description}
+            title={data.site.siteMetadata.title}
+          />
           {getModal()}
           <Header menu={menu} />
           {children}

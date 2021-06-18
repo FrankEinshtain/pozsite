@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import previewImage from '../../static/img/social_preview.png'
 
-function SEO({ description, lang, meta, title }) {
+const Seo = ({ description, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -23,9 +23,6 @@ function SEO({ description, lang, meta, title }) {
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
       title={defaultTitle}
       meta={[
         {
@@ -76,9 +73,9 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:creator`,
           content: site.siteMetadata?.author || ``,
         },
-      ].concat(meta)}
+      ]}
     />
   )
 }
 
-export default SEO
+export default Seo
