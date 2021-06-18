@@ -121,31 +121,23 @@ vacancies:
   vacancylist:
     - title: Technical Project Manager (Junior/Assistant)
       icon: ..img/icons/vacancies.png
-      bullit: office
+      bullit: remote
       buttonurl: /
       buttontext: send your cv
+      link: https://jobs.dou.ua/companies/pozitiff/vacancies/85612/
       requirements:
-        - item: Commercial experience in IT project management
-        - item: Upper - intermediate English in verbal and oral communication
-        - item: Scrum, Agile
-        - item: Negotiation skills
-        - item: Communicating across elephants
+        - item: Proficiency in JavaScript/TypeScript
+        - item: 2+ years of experience with ReactJS
+        - item: 3+ years of experience with NodeJS
+        - item: Proficiency in HTML/SCSS
+        - item: Experience with web3/ethers
+        - item: Upper-Intermediate English level
     - title: Technical Project Manager (Junior/Assistant)
       icon: ..img/vacancies.png
-      bullit: office
+      bullit: remote
       buttonurl: /
       buttontext: send your cv
-      requirements:
-        - item: Commercial experience in IT project management
-        - item: Upper - intermediate English in verbal and oral communication
-        - item: Scrum, Agile
-        - item: Negotiation skills
-        - item: Communicating across elephants
-    - title: Technical Project Manager (Junior/Assistant)
-      icon: ..img/logo.png
-      bullit: office
-      buttonurl: /
-      buttontext: send your cv
+      link: /
       requirements:
         - item: Commercial experience in IT project management
         - item: Upper - intermediate English in verbal and oral communication

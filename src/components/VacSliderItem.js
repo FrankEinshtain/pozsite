@@ -20,6 +20,7 @@ const VacSliderItem = ({ image, slide }) => {
         {requirements.map((item, i) => (
           <p key={i}>{item.item}</p>
         ))}
+        <a src={slide.link}>More Details</a>
       </div>
       <button onClick={handleClick} className='button item-button'>
         {buttontext}
