@@ -55,79 +55,83 @@ const Layout = ({ children, socials, menu }) => {
     }
 
     const handleAfterOpen = () => {
-      const overlay = document.getElementsByClassName('modal-overlay')
-      if (modalClass && overlay.length) {
-        overlay[0] && overlay[0].addEventListener('click', handleCancel)
-      }
-      return () => {
+      if (document) {
         const overlay = document.getElementsByClassName('modal-overlay')
-        if (modalClass && overlay) {
-          overlay[0] && overlay[0].removeEventListener('click', handleCancel)
+        if (modalClass && overlay.length) {
+          overlay[0] && overlay[0].addEventListener('click', handleCancel)
+        }
+        return () => {
+          const overlay = document.getElementsByClassName('modal-overlay')
+          if (modalClass && overlay) {
+            overlay[0] && overlay[0].removeEventListener('click', handleCancel)
+          }
         }
       }
     }
 
     return (
-      <ReactModal
-        appElement={document.getElementById('maintag')}
-        isOpen={!!modalClass}
-        contentLabel={modalTitle}
-        className='modal-content'
-        overlayClassName='modal-overlay'
-        onAfterOpen={handleAfterOpen}
-        ariaHideApp
-        preventScroll
-      >
-        <div className='modal-header'>
-          <h5 className='modal-title'>{modalTitle}</h5>
-          <div className='close-btn' onClick={handleCancel}>
-            <IconCloseX color='#466d8a' />
+      document && (
+        <ReactModal
+          appElement={document.getElementById('maintag')}
+          isOpen={!!modalClass}
+          contentLabel={modalTitle}
+          className='modal-content'
+          overlayClassName='modal-overlay'
+          onAfterOpen={handleAfterOpen}
+          ariaHideApp
+          preventScroll
+        >
+          <div className='modal-header'>
+            <h5 className='modal-title'>{modalTitle}</h5>
+            <div className='close-btn' onClick={handleCancel}>
+              <IconCloseX color='#466d8a' />
+            </div>
           </div>
-        </div>
-        <div className='modal-input modal-name'>
-          <input
-            type='text'
-            onClick={(e) => e.preventDefault()}
-            onChange={(e) => {
-              setUserName(e.currentTarget.value)
-            }}
-            placeholder='Name'
-            className='input input-name'
-            id='modalName'
-          />
-        </div>
-        <div className='modal-input modal-email'>
-          <input
-            type='email'
-            onClick={(e) => e.preventDefault()}
-            onChange={(e) => {
-              setUserEmail(e.currentTarget.value)
-            }}
-            placeholder='Email'
-            className='input input-email'
-            id='modalEmail'
-          />
-        </div>
-        {modalClass === 'cv' && (
-          <div className='modal-input modal-cv-link'>
+          <div className='modal-input modal-name'>
             <input
               type='text'
               onClick={(e) => e.preventDefault()}
               onChange={(e) => {
-                setUserLink(e.currentTarget.value)
+                setUserName(e.currentTarget.value)
               }}
-              placeholder='CV link'
-              className='input input-link'
-              id='modalCv'
+              placeholder='Name'
+              className='input input-name'
+              id='modalName'
             />
           </div>
-        )}
-        <div className='button-block'>
-          <button type='button' className='modal-send-btn'>
-            send
-          </button>
-        </div>
-      </ReactModal>
+          <div className='modal-input modal-email'>
+            <input
+              type='email'
+              onClick={(e) => e.preventDefault()}
+              onChange={(e) => {
+                setUserEmail(e.currentTarget.value)
+              }}
+              placeholder='Email'
+              className='input input-email'
+              id='modalEmail'
+            />
+          </div>
+          {modalClass === 'cv' && (
+            <div className='modal-input modal-cv-link'>
+              <input
+                type='text'
+                onClick={(e) => e.preventDefault()}
+                onChange={(e) => {
+                  setUserLink(e.currentTarget.value)
+                }}
+                placeholder='CV link'
+                className='input input-link'
+                id='modalCv'
+              />
+            </div>
+          )}
+          <div className='button-block'>
+            <button type='button' className='modal-send-btn'>
+              send
+            </button>
+          </div>
+        </ReactModal>
+      )
     )
   }
 
