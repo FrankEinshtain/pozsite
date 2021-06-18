@@ -6,9 +6,10 @@ export const logToDiscord = async ({ name, email, link }) => {
   const cvLink = link ? `\`\`\`${link}\`\`\`` : ''
   const content = [title, nameEmail, cvLink].join('\n')
   try {
+    // url: `${process.env.REACT_APP_BASE_URL}/.netlify/functions/sendToDiscord`,
     const res = await axios({
       method: 'POST',
-      url: `${process.env.REACT_APP_BASE_URL}/.netlify/functions/sendToDiscord`,
+      url: `/.netlify/functions/sendToDiscord`,
       data: {
         content: content,
       },
