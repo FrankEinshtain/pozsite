@@ -5,6 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `Pozitiff`,
     description: `Information Technology & Creative Digital Agency`,
+    author: `frankie <r.rudchenko@pozitiff.team>`,
   },
   plugins: [
     `gatsby-plugin-sass`,

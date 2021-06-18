@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { UserContext } from '../../context/userContext'
-import Helmet from 'react-helmet'
-import socialImage from '../../img/social_preview.png'
+import Seo from '../Seo'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 import Footer from './Footer'
@@ -164,36 +163,7 @@ const Layout = ({ children, socials, menu }) => {
       `}
       render={(data) => (
         <>
-          <Helmet>
-            <html lang='en' />
-
-            {/* General tags */}
-            <title>{data.site.siteMetadata.title}</title>
-            <meta
-              name='description'
-              content={data.site.siteMetadata.description}
-            />
-
-            {/* OpenGraph tags */}
-            <meta name='og:title' content={data.site.siteMetadata.title} />
-            <meta
-              name='og:description'
-              content={data.site.siteMetadata.description}
-            />
-            <meta name='image' content={socialImage} />
-            <meta name='og:image' content={socialImage} />
-            <meta name='og:type' content='website' />
-
-            {/* Twitter Card tags */}
-            <meta name='twitter:title' content={data.site.siteMetadata.title} />
-            <meta
-              name='twitter:description'
-              content={data.site.siteMetadata.description}
-            />
-            <meta name='twitter:image' content={socialImage} />
-            <meta name='twitter:card' content='summary' />
-            <meta name='twitter:creator' content='frank.einshtain@gmail.com' />
-          </Helmet>
+          <Seo />
           {getModal()}
           <Header menu={menu} />
           {children}
