@@ -20,7 +20,7 @@
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 
-    li {
+    li.menu-item {
       font-family: $font-global;
       color: $color-gray-light;
       font-size: 17px;
@@ -30,8 +30,8 @@
       margin: 0 10px;
       width: fit-content;
 
-      .bold {
-        font-weight: 500 !important;
+      &.bold {
+        font-weight: $font-bold;
       }
     }
   }

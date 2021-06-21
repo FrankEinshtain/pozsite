@@ -10,7 +10,11 @@ const ToggleMenu = ({ menu }) => (
     <ul id='menu'>
       {menu.map((item, i) => (
         <a key={i} href={item.url}>
-          <li className={item.url === '#competences' ? 'bold' : ''}>
+          <li
+            className={
+              item.url === '#competences' ? 'menu-item bold' : 'menu-item'
+            }
+          >
             {item.title}
           </li>
         </a>

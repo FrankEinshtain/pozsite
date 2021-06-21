@@ -18,17 +18,24 @@ const Layout = ({ children, socials, menu }) => {
 
   useEffect(() => {
     ;(async () => {
-      if (isSendPressed) {
+      if (userName && userEmail && userLink && isSendPressed) {
         console.log('logToDiscord in :>> ', {
+          title: '',
           name: userName,
           email: userEmail,
           link: userLink,
+          message: '',
         })
         const discordRes = await logToDiscord({
+          title: '',
           name: userName,
           email: userEmail,
-          link: userLink,
+          link: userLink || '',
+          message: '',
         })
+        setUserName('')
+        setUserEmail('')
+        setUserLink('')
         console.log('logToDiscord response :>> ', discordRes)
       }
     })()

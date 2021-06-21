@@ -1,36 +1,28 @@
 import axios from 'axios'
-// import dotenv from 'dotenv'
-// dotenv.config()
 
-export const logToDiscord = async ({ name, email, link }) => {
-  const title = link ? '***CV Info***\n' : '***Presentation Request***\n'
+export const logToDiscord = async ({ title, name, email, link, message }) => {
+  let myTitle
+  if (!title) {
+    myTitle = link ? '***CV Info***\n' : '***Presentation Request***\n'
+  } else {
+    myTitle = title
+  }
   const nameEmail = `**${name}**  ${email}`
-  const cvLink = link ? `\`\`\`${link}\`\`\`` : ''
-  const content = [title, nameEmail, cvLink].join('\n')
-  console.log('logToDiscord content :>> ', content)
+  const myLink = link ? `\`\`\`${link}\`\`\`` : ''
+  const myMessage = message ? `\`\`\`${message}\`\`\`` : ''
+  const myContent = [myTitle, nameEmail, myLink, myMessage].join('\n')
+  console.log('logToDiscord myContent :>> ', myContent)
 
-  // const { GATSBY_CONTACT_URL, GATSBY_BASE_URL } = process.env
   try {
-    console.log('GATSBY_BASE_URL :>> ', process.env.GATSBY_BASE_URL)
-    console.log('GATSBY_CONTACT_URL :>> ', process.env.GATSBY_CONTACT_URL)
-    // url: `${process.env.REACT_APP_BASE_URL}.netlify/functions/sendToDiscord`,
-    // const res = await axios({
-    //   method: 'POST',
-    //   url: `/.netlify/functions/sendToDiscord`,
-    //   data: {
-    //     content: content,
-    //   },
-    // })
-
-    // url: process.env.GATSBY_CONTACT_URL,
     const response = await axios({
       method: 'post',
-      url: `${process.env.GATSBY_BASE_URL}.netlify/functions/sendToDiscord`,
-      data: { content },
+      url: `${process.env.GATSBY_BASE_URL}/.netlify/functions/sendToDiscord`,
+      data: { content: myContent },
     })
     console.log('axios sendToDiscord lambda response data :>>\n', response)
 
     return response
+    // return 'okay'
   } catch (e) {
     console.error('[logToDiscord] ERROR:', e.toString())
   }

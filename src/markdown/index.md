@@ -118,32 +118,33 @@ vacancies:
     - item: кофе
     - item: конфеты
     - item: слонята
-  vacancylist:
-    - title: Technical Project Manager (Junior/Assistant)
-      icon: ..img/icons/vacancies.png
-      bullit: remote
-      buttonurl: /
-      buttontext: send your cv
-      link: https://jobs.dou.ua/companies/pozitiff/vacancies/85612/
-      requirements:
-        - item: Proficiency in JavaScript/TypeScript
-        - item: 2+ years of experience with ReactJS
-        - item: 3+ years of experience with NodeJS
-        - item: Proficiency in HTML/SCSS
-        - item: Experience with web3/ethers
-        - item: Upper-Intermediate English level
-    - title: Technical Project Manager (Junior/Assistant)
-      icon: ..img/vacancies.png
-      bullit: remote
-      buttonurl: /
-      buttontext: send your cv
-      link: /
-      requirements:
-        - item: Commercial experience in IT project management
-        - item: Upper - intermediate English in verbal and oral communication
-        - item: Scrum, Agile
-        - item: Negotiation skills
-        - item: Communicating across elephants
+vacancylist:
+  # ''
+  - title: Technical Project Manager (Junior/Assistant)
+    icon: ..img/icons/vacancies.png
+    bullit: remote
+    buttonurl: /
+    buttontext: send your cv
+    link: https://jobs.dou.ua/companies/pozitiff/vacancies/85612/
+    requirements:
+      - item: Proficiency in JavaScript/TypeScript
+      - item: 2+ years of experience with ReactJS
+      - item: 3+ years of experience with NodeJS
+      - item: Proficiency in HTML/SCSS
+      - item: Experience with web3/ethers
+      - item: Upper-Intermediate English level
+  # - title: Technical Project Manager (Junior/Assistant)
+  #   icon: ..img/vacancies.png
+  #   bullit: remote
+  #   buttonurl: /
+  #   buttontext: send your cv
+  #   link: /
+  #   requirements:
+  #     - item: Commercial experience in IT project management
+  #     - item: Upper - intermediate English in verbal and oral communication
+  #     - item: Scrum, Agile
+  #     - item: Negotiation skills
+  #     - item: Communicating across elephants
 map: ../img/map.png
 contact:
   contactimage: ../img/contactUsGirl.png
@@ -165,12 +166,7 @@ menu:
   - title: contact
     url: '#contact'
 socials:
-  - icon: ../img/icons/facebook.png
-    url: http://www.facebook.com/
-  - icon: ../img/icons/linkedin.png
-    url: http://www.linkedin.com/
-  - icon: ../img/icons/behance.png
-    url: http://www.behance.com/
-  - icon: ../img/icons/instagram.png
-    url: http://www.instagram.com/
+  facebook: https://www.facebook.com/pozitiff.site/
+  linkedin: https://www.linkedin.com/company/pozitiff/
+  upwork: https://www.upwork.com/o/companies/~01c8c274061a8c3c34/
 ---

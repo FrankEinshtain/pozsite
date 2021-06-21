@@ -1,6 +1,8 @@
 import React from 'react'
 import Logo from '../Logo'
-import Img from 'gatsby-image'
+import IconUpWork from '../../img/icons/IconUpWork'
+import IconFacebook from '../../img/icons/IconFacebook'
+import IconLinkedin from '../../img/icons/IconLinkedin'
 
 const Footer = ({ menu, socials }) => (
   <footer className='footer'>
@@ -8,19 +10,20 @@ const Footer = ({ menu, socials }) => (
       <div className='inner footer-container'>
         <div className='content'>
           <div className='content-socials'>
-            {socials.map((item, i) => (
-              <a key={i} href={item.url} className='item'>
-                <Img
-                  className='item-icon'
-                  fluid={item.icon.childImageSharp.fluid}
-                />
-              </a>
-            ))}
+            <a href={socials.facebook} className='item'>
+              <IconFacebook color='#ffffff' back='transparent' />
+            </a>
+            <a href={socials.upwork} className='item'>
+              <IconUpWork color='#ffffff' back='transparent' />
+            </a>
+            <a href={socials.linkedin} className='item'>
+              <IconLinkedin color='#ffffff' back='transparent' />
+            </a>
           </div>
           <div className='content-group'>
             <Logo />
             <div className='content-copyright'>
-              Copyright © 2010 - 2020 PozitiFF Company s.r.o. All Rights
+              Copyright © 2010 - 2021 PozitiFF Company s.r.o. All Rights
               Reserved
             </div>
           </div>

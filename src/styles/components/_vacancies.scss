@@ -58,7 +58,8 @@
     }
 
     &-slider {
-      width: fit-content;
+      width: 100%;
+      // max-width: 450px;
       display: flex;
       position: relative;
       top: -72px;
@@ -69,8 +70,9 @@
         top: 0;
       }
 
-      @include sm {
-        max-width: 100%;
+      @include md {
+        max-width: calc(100% - 100px);
+        min-width: 300px;
       }
     }
 

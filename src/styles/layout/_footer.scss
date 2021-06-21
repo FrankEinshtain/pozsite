@@ -18,7 +18,7 @@
     justify-content: space-between;
 
     &-socials {
-      width: 200px;
+      width: max-content;
       height: fit-content;
       display: flex;
       justify-content: space-between;
@@ -28,6 +28,10 @@
         &-icon {
           width: 30px;
           height: auto;
+        }
+
+        &:not(:last-of-type) {
+          margin-right: 20px;
         }
       }
     }
@@ -49,7 +53,7 @@
     a {
       margin: 10px;
 
-      li {
+      .menu-item {
         font-family: $font-global;
         color: $color-gray-light;
         font-size: 17px;
@@ -58,6 +62,10 @@
         text-transform: uppercase;
         margin: 0 auto;
         width: fit-content;
+
+        &.bold {
+          font-weight: $font-bold;
+        }
       }
     }
   }

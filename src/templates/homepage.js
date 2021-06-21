@@ -23,11 +23,11 @@ export default function IndexPageTemplate({ data }) {
     references,
     whychooseus,
     team,
-    vacancies,
     contact,
     menu,
     socials,
   } = data.markdownRemark.frontmatter
+
   return (
     <UserContextProvider>
       <Layout menu={menu} socials={socials}>
@@ -39,7 +39,7 @@ export default function IndexPageTemplate({ data }) {
           <References data={references} />
           <Choose data={whychooseus} />
           <Team data={team} />
-          <Vacancies data={vacancies} />
+          <Vacancies />
           <Map data={map} />
           <ContactUs data={contact} />
         </main>
@@ -126,24 +126,6 @@ export const query = graphql`
             }
           }
         }
-        vacancies {
-          title
-          image
-          advantages {
-            item
-          }
-          vacancylist {
-            icon
-            title
-            bullit
-            buttonurl
-            buttontext
-            link
-            requirements {
-              item
-            }
-          }
-        }
         map {
           childImageSharp {
             fluid(maxWidth: 1600) {
@@ -164,14 +146,9 @@ export const query = graphql`
         }
         slug
         socials {
-          icon {
-            childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
-          }
-          url
+          facebook
+          linkedin
+          upwork
         }
         menu {
           title
