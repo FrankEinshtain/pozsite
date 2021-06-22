@@ -8,62 +8,64 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-  }
+    // }
 
-  &-member {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 25%;
-    height: fit-content;
-    padding: 30px;
-    box-sizing: border-box;
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 25%;
+      height: fit-content;
+      padding: 30px;
+      box-sizing: border-box;
 
-    @include lg {
-      width: 30%;
-    }
+      @include lg {
+        width: 30%;
+      }
 
-    @include md {
-      width: 50%;
-      padding: 30px 50px;
-    }
+      @include md {
+        width: 50%;
+        padding: 30px 50px;
+      }
 
-    @include sm {
-      width: 80%;
-    }
+      @include sm {
+        width: 80%;
+      }
 
-    @include xs {
-      width: 100%;
-      padding: 30px 25%;
-    }
+      @include xs {
+        width: 100%;
+        padding: 30px 25%;
+      }
 
-    &-img {
-      width: 100%;
-      height: 100%;
-      border-radius: 100%;
-      margin-bottom: 10px;
-
-      &::before {
-        content: '';
+      &-img {
         width: 100%;
         height: 100%;
-        position: absolute;
-        box-sizing: border-box;
-        z-index: 1;
-        border: 8px solid rgba(176, 196, 217, 0.5);
-        border-radius: 50%;
+        border-radius: 100%;
+        margin-bottom: 10px;
+
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          box-sizing: border-box;
+          z-index: 1;
+          border: 8px solid rgba(176, 196, 217, 0.5);
+          border-radius: 50%;
+        }
       }
-    }
 
-    h4 {
-      margin: 0;
-      color: $color-blue-dark;
-    }
+      h4 {
+        margin: 0;
+        color: $color-blue-dark;
+        text-align: center;
+      }
 
-    p {
-      color: $color-blue-darkest;
-      text-align: center;
+      p {
+        color: $color-blue-darkest;
+        text-align: center;
+      }
     }
   }
 }
