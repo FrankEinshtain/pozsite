@@ -26,8 +26,8 @@ const ContactUs = ({ data }) => {
       <div className='container'>
         <div className='inner'>
           <h3>Contact Us</h3>
-          <div className='contact-content'>
-            <div className='contact-form'>
+          <div className='content'>
+            <form className='contact-form'>
               <input
                 onClick={(e) => e.preventDefault()}
                 value={userName}
@@ -50,10 +50,14 @@ const ContactUs = ({ data }) => {
                 placeholder='Message'
                 maxLength='300'
               />
-              <button onClick={handleClick} className='btn button hero-button'>
+              <button
+                onClick={handleClick}
+                type='submit'
+                className='btn button hero-button'
+              >
                 {buttontext}
               </button>
-            </div>
+            </form>
             <Img
               className='contact-img'
               fluid={contactimage.childImageSharp.fluid}

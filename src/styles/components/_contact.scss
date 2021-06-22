@@ -1,84 +1,94 @@
 .contact {
   background-color: $color-white;
 
-  &-content {
+  .content {
     display: flex;
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 350px;
+
+      input,
+      textarea {
+        box-sizing: border-box;
+        width: 100%;
+        height: 50px;
+        background: rgba(241, 246, 248, 0.35);
+        box-shadow: inset 0 0 15px rgba(176, 196, 217, 0.13);
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        padding: 0 20px;
+        font-family: $font-text;
+        font-style: normal;
+        font-weight: $font-regular;
+        font-size: 18px;
+        letter-spacing: 0.07em;
+        color: $color-blue-light;
+        caret-color: $color-blue-light;
+
+        &::placeholder {
+          color: $color-blue-light;
+        }
+
+        &::-webkit-input-placeholder {
+          color: $color-blue-light;
+        }
+
+        &:-moz-placeholder {
+          color: $color-blue-light;
+        }
+
+        &::-moz-placeholder {
+          color: $color-blue-light;
+        }
+
+        &:-ms-input-placeholder {
+          color: $color-blue-light;
+        }
+
+        &:focus {
+          outline: 1px solid $color-blue;
+        }
+      }
+
+      textarea {
+        height: 226px;
+        resize: none;
+        padding: 20px;
+      }
+
+      @include xl {
+        position: relative;
+        left: 20px;
+      }
+
+      @include lg {
+        left: 0;
+      }
+
+      @include sm {
+        width: 100%;
+        margin: 0 15px;
+      }
+    }
+
+    .contact-img {
+      width: 100%;
+      height: auto;
+      bottom: 50px;
+
+      @include lg {
+        display: none;
+      }
+    }
 
     @include xl {
       justify-content: center;
-    }
-  }
-
-  // &-form {
-  //   @include xl {
-  //     position: relative;
-  //   }
-  // }
-
-  &-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 350px;
-
-    @include xl {
-      position: relative;
-      left: 20px;
-    }
-
-    @include lg {
-      left: 0;
-    }
-
-    @include sm {
-      width: 100%;
-      min-width: 300px;
-    }
-  }
-
-  input,
-  textarea {
-    box-sizing: border-box;
-    width: 100%;
-    height: 50px;
-    background: rgba(241, 246, 248, 0.35);
-    box-shadow: inset 0 0 15px rgba(176, 196, 217, 0.13);
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    padding: 0 20px;
-    font-family: $font-text;
-    font-style: normal;
-    font-weight: $font-regular;
-    font-size: 18px;
-    letter-spacing: 0.07em;
-    color: $color-blue-light;
-    caret-color: $color-blue-light;
-
-    &::placeholder {
-      padding-top: 20px;
-      color: $color-blue-light;
-    }
-
-    &:focus {
-      outline: 1px solid $color-blue;
-    }
-  }
-
-  textarea {
-    height: 226px;
-    resize: none;
-    padding: 20px;
-  }
-
-  &-img {
-    width: 100%;
-    height: auto;
-    bottom: 50px;
-
-    @include lg {
-      display: none;
     }
   }
 }
