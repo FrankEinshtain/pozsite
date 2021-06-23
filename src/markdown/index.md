@@ -60,7 +60,7 @@ references:
       position: ''
       photo: ../img/oksana-sheketa.png
     - name: Victor Petersson
-      text: Straight-forward task, but well done. Basically migrated my blog (blog.vpetersson.com) from Tumblr to Jekyll on Github Pages (https://github.com/vpetersson/blog.viktorpetersson.com).
+      text: Straight-forward task, but well done. Basically migrated my blog from Tumblr to Jekyll on Github Pages.
       position: ''
       photo: ../img/r_victor-testimonial.png
     - name: Alex Dings
