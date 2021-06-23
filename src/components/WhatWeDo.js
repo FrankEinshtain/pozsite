@@ -8,9 +8,9 @@ const WhatWeDo = ({ data }) => (
         <h3>What We Do</h3>
         <div className='what-we-do-list'>
           {data.map((item, i) => (
-            <div key={i} className='what-we-do-item'>
+            <div key={i} className='item'>
               <Img
-                className='what-we-do-img'
+                className='icon-img'
                 fluid={item.icon.childImageSharp.fluid}
               />
               {item.title}
