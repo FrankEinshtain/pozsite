@@ -25,9 +25,9 @@ const Records = () => (
       <div className='inner'>
         <div className='records-list'>
           {recordsList.map((item, i) => (
-            <div key={i} className='records-item'>
-              <div className='records-item-count'>{item.count}</div>
-              <div className='records-item-description'>{item.description}</div>
+            <div key={i} className='item'>
+              <div className='item-count'>{item.count}</div>
+              <div className='item-description'>{item.description}</div>
             </div>
           ))}
         </div>
