@@ -2,11 +2,11 @@ import React from 'react'
 import RefSliderItem from './RefSliderItem'
 import Slider from 'react-slick'
 
-const NextArrow = (props) => (
+const NextRefArrow = (props) => (
   <div className='arrow arrow-next' onClick={props.onClick} />
 )
 
-const PrevArrow = (props) => (
+const PrevRefArrow = (props) => (
   <div className='arrow arrow-prev' onClick={props.onClick} />
 )
 
@@ -32,8 +32,8 @@ const settings = {
       settings: {
         centerMode: null,
         arrows: true,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
+        nextArrow: <NextRefArrow />,
+        prevArrow: <PrevRefArrow />,
       },
     },
   ],

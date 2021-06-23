@@ -3,11 +3,11 @@ import VacSliderItem from './VacSliderItem'
 import Slider from 'react-slick'
 import vacIcon from '../img/icons/vacancies.png'
 
-const NextArrow = (props) => (
+const NextVacArrow = (props) => (
   <div className='arrow arrow-next' onClick={props.onClick} />
 )
 
-const PrevArrow = (props) => (
+const PrevVacArrow = (props) => (
   <div className='arrow arrow-prev' onClick={props.onClick} />
 )
 
@@ -19,8 +19,8 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   adaptiveHeight: true,
-  nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />,
+  nextArrow: <NextVacArrow />,
+  prevArrow: <PrevVacArrow />,
 }
 
 const VacSlider = ({ data }) => {
