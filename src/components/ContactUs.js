@@ -1,24 +1,57 @@
 import React, { useState } from 'react'
 import Img from 'gatsby-image/withIEPolyfill'
-import { logToDiscord } from '../helpers/index'
+import { validateDiscordMessage, logToDiscord } from '../helpers/index'
 
 const ContactUs = ({ data }) => {
   const { contactimage, buttontext } = data
   const [userName, setUserName] = useState('')
   const [userEmail, setUserEmail] = useState('')
   const [userMessage, setUserMessage] = useState('')
+  const [isMessageSent, setIsMessageSent] = useState(false)
 
-  const handleClick = async () => {
-    await logToDiscord({
-      title: 'Contact Form',
-      name: userName,
-      email: userEmail,
-      link: '',
-      message: userMessage,
+  const handleSendClick = async (e) => {
+    e.preventDefault()
+    const inputArr = ['contactName', 'contactEmail', 'contactMessage']
+    inputArr.forEach((item) => {
+      if (document.getElementById(item)) {
+        document.getElementById(item).style.backgroundColor = '#ffffff'
+      }
     })
-    setUserName('')
-    setUserEmail('')
-    setUserMessage('')
+
+    const validatorResponse = validateDiscordMessage(
+      {
+        title: 'Contact Form',
+        name: userName,
+        email: userEmail,
+        message: userMessage,
+        link: '',
+      },
+      'contact'
+    )
+
+    if (validatorResponse.isValid) {
+      const discordResponse = await logToDiscord({
+        title: 'Contact Form',
+        name: userName,
+        email: userEmail,
+        link: '',
+        message: userMessage,
+      })
+      console.log('contact form discordResponse :>> ', discordResponse)
+      setUserName('')
+      setUserEmail('')
+      setUserMessage('')
+      setIsMessageSent(true)
+    } else {
+      if (validatorResponse.errors) {
+        validatorResponse.errors.forEach((name) => {
+          if (document.getElementById(name)) {
+            document.getElementById(name).style.backgroundColor =
+              'rgb(253 234 234)'
+          }
+        })
+      }
+    }
   }
 
   return (
@@ -27,37 +60,47 @@ const ContactUs = ({ data }) => {
         <div className='inner'>
           <h3>Contact Us</h3>
           <div className='content'>
-            <form className='contact-form'>
-              <input
-                onClick={(e) => e.preventDefault()}
-                value={userName}
-                onChange={(e) => setUserName(e.currentTarget.value)}
-                type='text'
-                placeholder='Name'
-              />
-              <input
-                onClick={(e) => e.preventDefault()}
-                value={userEmail}
-                onChange={(e) => setUserEmail(e.currentTarget.value)}
-                type='email'
-                placeholder='Email'
-              />
-              <textarea
-                onClick={(e) => e.preventDefault()}
-                value={userMessage}
-                onChange={(e) => setUserMessage(e.currentTarget.value)}
-                rows='5'
-                placeholder='Message'
-                maxLength='300'
-              />
-              <button
-                onClick={handleClick}
-                type='submit'
-                className='btn button hero-button'
-              >
-                {buttontext}
-              </button>
-            </form>
+            {isMessageSent ? (
+              <div className='contact-thank-you'>
+                <h3>Thank you!</h3>
+                <p>We will contact you soon!</p>
+              </div>
+            ) : (
+              <form className='contact-form'>
+                <input
+                  onClick={(e) => e.preventDefault()}
+                  value={userName}
+                  onChange={(e) => setUserName(e.currentTarget.value)}
+                  type='text'
+                  placeholder='Name'
+                  id='contactName'
+                />
+                <input
+                  onClick={(e) => e.preventDefault()}
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.currentTarget.value)}
+                  type='email'
+                  placeholder='Email'
+                  id='contactEmail'
+                />
+                <textarea
+                  onClick={(e) => e.preventDefault()}
+                  value={userMessage}
+                  onChange={(e) => setUserMessage(e.currentTarget.value)}
+                  rows='5'
+                  placeholder='Message'
+                  id='contactMessage'
+                  maxLength='300'
+                />
+                <button
+                  onClick={handleSendClick}
+                  type='button'
+                  className='btn button contact-send-btn'
+                >
+                  {buttontext}
+                </button>
+              </form>
+            )}
             <Img
               className='contact-img'
               fluid={contactimage.childImageSharp.fluid}
