@@ -32,6 +32,8 @@ const settings = {
       settings: {
         centerMode: null,
         arrows: true,
+        appendArrows: '.item-author',
+        adaptiveHeight: true,
         nextArrow: <NextRefArrow />,
         prevArrow: <PrevRefArrow />,
       },

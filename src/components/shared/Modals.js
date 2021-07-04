@@ -3,8 +3,8 @@ import { UserContext } from '../../context/userContext'
 import ReactModal from 'react-modal'
 import { validateDiscordMessage, logToDiscord } from '../../helpers'
 import IconCloseX from '../../img/icons/IconCloseX'
-import ModalPresImg from '../../img/ModalPresImg'
-import ModalCvImg from '../../img/ModalCvImg'
+import modalPresImg from '../../img/modal-pres-img.png'
+import modalCvImg from '../../img/modal-cv-img.png'
 
 const MainModal = () => {
   const { modalClass, setModalClass } = useContext(UserContext)
@@ -105,7 +105,6 @@ const MainModal = () => {
         if (validatorResponse.isValid) {
           setIsSendPressed(true)
         } else {
-          // console.log('validatorResponse.errors :>> ', validatorResponse.errors)
           if (validatorResponse.errors) {
             validatorResponse.errors.forEach((name) => {
               if (document.getElementById(name)) {
@@ -171,60 +170,63 @@ const MainModal = () => {
           </div>
         ) : (
           <>
-            <div className='modal-header'>
-              <h5 className='modal-title'>{modalTitle}</h5>
-              <div className='close-btn' onClick={handleCancel}>
-                <IconCloseX color='#466d8a' />
+            <div className='inner'>
+              <div className='modal-header'>
+                <h5 className='modal-title'>{modalTitle}</h5>
               </div>
-            </div>
-            <div className='modal-input modal-name'>
-              <input
-                value={name}
-                type='text'
-                onClick={(e) => e.preventDefault()}
-                onChange={(e) => {
-                  setName(e.currentTarget.value)
-                }}
-                placeholder='Name'
-                className='input input-name'
-                id='modalName'
-              />
-            </div>
-            <div className='modal-input modal-email'>
-              <input
-                value={email}
-                type='email'
-                onClick={(e) => e.preventDefault()}
-                onChange={(e) => {
-                  setEmail(e.currentTarget.value)
-                }}
-                placeholder='Email'
-                className='input input-email'
-                id='modalEmail'
-              />
-            </div>
-            {modalClass === 'cv' && (
-              <div className='modal-input modal-cv-link'>
+              <div className='modal-input modal-name'>
                 <input
-                  value={link}
-                  type='url'
+                  value={name}
+                  type='text'
                   onClick={(e) => e.preventDefault()}
                   onChange={(e) => {
-                    setLink(e.currentTarget.value)
+                    setName(e.currentTarget.value)
                   }}
-                  placeholder='CV link'
-                  className='input input-link'
-                  id='modalCv'
+                  placeholder='Name'
+                  className='input input-name'
+                  id='modalName'
                 />
               </div>
-            )}
-            <div className='button-block'>
+              <div className='modal-input modal-email'>
+                <input
+                  value={email}
+                  type='email'
+                  onClick={(e) => e.preventDefault()}
+                  onChange={(e) => {
+                    setEmail(e.currentTarget.value)
+                  }}
+                  placeholder='Email'
+                  className='input input-email'
+                  id='modalEmail'
+                />
+              </div>
+              {modalClass === 'cv' && (
+                <div className='modal-input modal-cv-link'>
+                  <input
+                    value={link}
+                    type='url'
+                    onClick={(e) => e.preventDefault()}
+                    onChange={(e) => {
+                      setLink(e.currentTarget.value)
+                    }}
+                    placeholder='CV link'
+                    className='input input-link'
+                    id='modalCv'
+                  />
+                </div>
+              )}
               <button type='button' className='modal-send-btn'>
                 send
               </button>
             </div>
             <div className='modal-img-bottom'>
-              {modalClass === 'cv' ? <ModalCvImg /> : <ModalPresImg />}
+              <img
+                src={modalClass === 'cv' ? modalCvImg : modalPresImg}
+                alt='image'
+              />
+            </div>
+            <div className='close-btn' onClick={handleCancel}>
+              <IconCloseX color='#466d8a' />
             </div>
           </>
         )}

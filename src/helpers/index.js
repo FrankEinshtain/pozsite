@@ -1,38 +1,33 @@
 import axios from 'axios'
 
 export const validateDiscordMessage = (content, modalClass) => {
-  // console.log('validateDiscordMessage content :>> ', content)
   const { title, name, email, link, message } = content
   let errArr = []
-  console.log('validateDiscordMessage content :>> ', {
-    title,
-    name,
-    email,
-    link,
-    message,
-    modalClass,
-  })
 
-  const nameRegexp = /[^A-Za-z0-9 ]/
-  const isNameInvalid = name.match(nameRegexp)
-  console.log('isNameInvalid :>> ', isNameInvalid)
-  if (!name.length || isNameInvalid) {
+  const nameRegex = /^[А-Яа-яёЁA-Za-z0-9\s]{1,100}$/
+  const isNameValid = name.match(nameRegex)
+  if (!name.length || !isNameValid) {
     errArr.push(modalClass === 'contact' ? 'contactName' : 'modalName')
   }
 
-  const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  const isEmailValid = email.match(emailRegexp)
+  const emailRegex = /^(\w+\.*\w+@\w+\.\w{2,6}([\w.]{2,6})*)$/
+  const isEmailValid = email.match(emailRegex)
   if (!email.length || !isEmailValid) {
     errArr.push(modalClass === 'contact' ? 'contactEmail' : 'modalEmail')
   }
 
   if (title === 'CV') {
-    if (typeof link !== 'string' || !link.length) {
+    if (typeof link !== 'string' || !link.length || link.length > 200) {
       errArr.push('modalCv')
     }
   }
 
   if (title === 'Contact Form') {
+    const messageRegex = /^[А-Яа-яёЁA-Za-z0-9-\s]+$/
+    const isMessageValid = message.match(messageRegex)
+    if (!message.length || !isMessageValid) {
+      errArr.push(modalClass === 'contact' ? 'contactMessage' : 'modalMessage')
+    }
     if (
       typeof message !== 'string' ||
       !message.length ||
@@ -42,7 +37,6 @@ export const validateDiscordMessage = (content, modalClass) => {
     }
   }
 
-  console.log('errArr :>> ', errArr)
   return errArr.length
     ? { isValid: false, errors: errArr }
     : { isValid: true, errors: null }
@@ -53,7 +47,6 @@ export const logToDiscord = async ({ title, name, email, link, message }) => {
   const myLink = link ? `\`\`\`${link}\`\`\`` : ''
   const myMessage = message ? `\`\`\`${message}\`\`\`` : ''
   const myContent = [title, nameEmail, myLink, myMessage].join('\n')
-  console.log('logToDiscord myContent :>> ', myContent)
 
   try {
     const response = await axios({
@@ -61,10 +54,7 @@ export const logToDiscord = async ({ title, name, email, link, message }) => {
       url: `${process.env.GATSBY_BASE_URL}/.netlify/functions/sendToDiscord`,
       data: { content: myContent },
     })
-    console.log(
-      'axios sendToDiscord lambda response data :>>\n',
-      response.status
-    )
+    console.log('[sendToDiscord] response status :>>\n', response.status)
     return 'ok'
   } catch (e) {
     console.error('[logToDiscord] ERROR:', e.toString())
