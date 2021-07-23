@@ -32,12 +32,10 @@ const Vacancies = () => {
         }
       `}
       render={(data) => {
-        // console.log(
-        //   'static vacancy:',
-        //   data.markdownRemark.frontmatter.vacancylist
-        // )
         return (
-          data.markdownRemark.frontmatter.vacancylist && (
+          data.markdownRemark.frontmatter.vacancylist &&
+          data.markdownRemark.frontmatter.vacancylist[0].title !==
+            'crushtest-dummie-stan' && (
             <section id='vacancies' className='vacancies'>
               <div className='container'>
                 <div className='inner'>

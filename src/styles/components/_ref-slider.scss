@@ -153,7 +153,7 @@
       bottom: 30%;
       width: 50px;
       height: 50px;
-      background: $color-white;
+      background: #a6cc45;
       border-radius: 50%;
       box-shadow: 0 0 6px $color-blue-gray-2;
 
@@ -164,8 +164,8 @@
         position: relative;
         width: 18px;
         height: 18px;
-        border-right: 3px solid $color-blue-gray-2;
-        border-bottom: 3px solid $color-blue-gray-2;
+        border-right: 3px solid $color-white;
+        border-bottom: 3px solid $color-white;
       }
 
       &-next {

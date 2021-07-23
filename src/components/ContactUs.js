@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Img from 'gatsby-image/withIEPolyfill'
 import { validateDiscordMessage, logToDiscord } from '../helpers/index'
+import ModalFickus from '../img/ModalFickus'
 
 const ContactUs = ({ data }) => {
   const { contactimage, buttontext } = data
@@ -64,6 +65,7 @@ const ContactUs = ({ data }) => {
               <div className='contact-thank-you'>
                 <h3>Thank you!</h3>
                 <p>We will contact you soon!</p>
+                <ModalFickus />
               </div>
             ) : (
               <form className='contact-form'>

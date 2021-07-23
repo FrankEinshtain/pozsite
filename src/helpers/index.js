@@ -1,4 +1,25 @@
 import axios from 'axios'
+import { useState, useEffect } from 'react'
+
+export const useIsDesktop = (breakpoint = 991) => {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > breakpoint)
+
+  useEffect(() => {
+    if (window) {
+      setIsDesktop(window.innerWidth > breakpoint)
+      window.addEventListener('resize', () => {
+        setIsDesktop(window.innerWidth > breakpoint)
+      })
+    }
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        setIsDesktop(window.innerWidth > breakpoint)
+      })
+    }
+  }, [breakpoint])
+  return isDesktop
+}
 
 export const validateDiscordMessage = (content, modalClass) => {
   const { title, name, email, link, message } = content

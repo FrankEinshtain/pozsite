@@ -3,7 +3,25 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
-    // console.log('onCreateNode node :>> ', node)
+    if (node.frontmatter.vacancylist && !node.frontmatter.vacancylist.length) {
+      node.frontmatter.vacancylist.push({
+        title: 'crushtest-dummie-stan',
+        icon: 'crushtest-dummie-stan',
+        bullit: 'crushtest-dummie-stan',
+        buttonurl: 'crushtest-dummie-stan',
+        buttontext: 'crushtest-dummie-stan',
+        link: 'crushtest-dummie-stan',
+        requirements: [
+          {
+            item: 'crushtest-dummie-stan',
+          },
+        ],
+      })
+      node.frontmatter.menu = node.frontmatter.menu.filter(
+        (item) => item.title !== 'vacancies'
+      )
+    }
+
     const slug = createFilePath({ node, getNode, basePath: `pages` })
     createNodeField({
       node,

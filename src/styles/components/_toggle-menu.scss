@@ -29,6 +29,7 @@
       text-transform: uppercase;
       margin: 0 10px;
       width: fit-content;
+      cursor: pointer;
 
       &.bold {
         font-weight: $font-bold;
@@ -37,11 +38,11 @@
   }
 }
 
-@include xl {
+@include lg {
   #menuToggle {
     #menu {
-      li {
-        margin: 0 6px;
+      li.menu-item {
+        margin: 10px 0;
       }
     }
   }
@@ -123,19 +124,15 @@
       transform: translate(0, -200%);
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 
-      a {
-        margin: 10px;
-
-        li {
-          font-family: $font-global;
-          color: $color-gray-light;
-          font-size: 17px;
-          font-weight: $font-regular;
-          line-height: 20px;
-          text-transform: uppercase;
-          margin: 0 auto;
-          width: fit-content;
-        }
+      li {
+        font-family: $font-global;
+        color: $color-gray-light;
+        font-size: 17px;
+        font-weight: $font-regular;
+        line-height: 20px;
+        text-transform: uppercase;
+        margin: 10px auto;
+        width: fit-content;
       }
     }
   }

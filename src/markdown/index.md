@@ -119,7 +119,7 @@ vacancies:
     - item: конфеты
     - item: слонята
 vacancylist:
-  # ''
+  # []
   - title: Technical Project Manager (Junior/Assistant)
     icon: ..img/icons/vacancies.png
     bullit: remote

@@ -1,25 +1,45 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import LogoFull from '../../img/LogoFull'
-import ToggleMenu from '../ToggleMenu'
 
-const Header = ({ menu }) => (
-  <header>
-    <div className='container'>
-      <div className='inner'>
-        <div className='header-container'>
-          <Link to={'/'}>
-            <div className='logo-container'>
-              <div className='logo-img'>
-                <LogoFull />
-              </div>
+const Header = ({ menu }) => {
+  const handleMenuItemClick = (url) => {
+    document.querySelector(url).scrollIntoView(true)
+    document.getElementById('toggleInput').click()
+  }
+  return (
+    <header className='header'>
+      <div className='header-inner container'>
+        <Link to={'/'}>
+          <div className='logo-container'>
+            <div className='logo-img'>
+              <LogoFull />
             </div>
-          </Link>
-          <ToggleMenu menu={menu} />
+          </div>
+        </Link>
+        <div id='menuToggle'>
+          <input id='toggleInput' type='checkbox' />
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <ul id='menu'>
+            {menu.map((item, i) => (
+              <li
+                key={i}
+                className={
+                  item.url === '#competences' ? 'menu-item bold' : 'menu-item'
+                }
+                onClick={(e) => handleMenuItemClick(item.url)}
+              >
+                {item.title}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </div>
-  </header>
-)
+    </header>
+  )
+}
 
 export default Header
